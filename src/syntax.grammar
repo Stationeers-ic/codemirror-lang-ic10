@@ -1,4 +1,4 @@
-@top Program { expression* }
+@top Program { Line* }
 
 @skip { space | LineComment }
 
@@ -11,20 +11,27 @@ expression {
 }
 
 
-
 @tokens {
 	Identifier { $[a-zA-Z_\-0-9]+ }
-	Number { $[0-9]+ ![a-zA-Z]}
+	Number { $[0-9]+ }
 
-	@precedence { RegDev, Number, Identifier}
+	@precedence { RegDev, Operator, Number, Identifier}
 
 	String { '"' (!["\\] | "\\" _)* '"' }
+	Operator { "move" | "sna"}
 
+	Label { @asciiLetter+ ":"}
 
-	register { "r" $[0-9]+ | "ra" | "sp" }
-	device { "d" $[0-9]+ | "db"}
+	Arguments { RegDev | Number | Identifier}
 
-	RegDev { register | device}
+	OperatorLine { Operator Arguments* }
+
+	Line { (OperatorLine | Label) "\n"}
+
+	Register { "r" $[0-9]+ | "ra" | "sp" }
+	Device { "d" $[0-9]+ | "db"}
+
+	RegDev { Register | Device}
 
 	// Boolean { "#t" | "#f" }
 
