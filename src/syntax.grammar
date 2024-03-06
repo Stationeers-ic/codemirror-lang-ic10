@@ -14,9 +14,9 @@ expression {
 
 @tokens {
 	Identifier { $[a-zA-Z_\-0-9]+ }
-	Number { $[0-9]+}
+	Number { $[0-9]+ ![a-zA-Z]}
 
-	@precedence { Number, Identifier}
+	@precedence { RegDev, Number, Identifier}
 
 	String { '"' (!["\\] | "\\" _)* '"' }
 
