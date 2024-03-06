@@ -49,6 +49,7 @@
 		"brne",
 		"brnez",
 		"lbns",
+		"lezer",
 		"Mineables",
 		"nanz",
 		"ninf",

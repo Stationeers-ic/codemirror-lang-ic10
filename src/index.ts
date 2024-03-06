@@ -1,1 +1,1 @@
-console.log("Hello via Bun!")
+export { icLanguage, ic10 } from "./lang-ic"

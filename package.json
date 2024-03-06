@@ -1,13 +1,32 @@
 {
   "name": "lang-ic",
+  "version": "0.0.1",
   "module": "src/index.ts",
   "type": "module",
+  "scripts": {
+    "prepare": "rollup -c"
+  },
+  "main": "dist/index.cjs",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "types": "dist/index.d.ts",
   "devDependencies": {
+    "@lezer/generator": "^1.6.0",
     "@types/bun": "latest",
     "prettier": "^3.2.5",
+    "rollup": "^4.12.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-ts": "^3.4.5",
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@codemirror/language": "^6.10.1",
+    "@lezer/highlight": "^1.2.0",
+    "@lezer/lr": "^1.4.0"
   }
 }
