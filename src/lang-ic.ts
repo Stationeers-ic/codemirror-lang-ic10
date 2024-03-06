@@ -21,10 +21,10 @@ export const icLanguage = LRLanguage.define({
 			}),
 			styleTags({
 				Identifier: t.variableName,
-				Boolean: t.bool,
+				Number: t.number,
+				RegDev: t.bool,
 				String: t.string,
 				LineComment: t.lineComment,
-				"( )": t.paren,
 			}),
 		],
 	}),

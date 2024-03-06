@@ -3,24 +3,37 @@
 @skip { space | LineComment }
 
 expression {
-  Identifier |
-  String |
-  Boolean |
-  Application { "(" expression* ")" }
+	Identifier |
+	String |
+	Number |
+	RegDev
+	// Application { "(" expression* ")" }
 }
 
+
+
 @tokens {
-  Identifier { $[a-zA-Z_\-0-9]+ }
+	Identifier { $[a-zA-Z_\-0-9]+ }
+	Number { $[0-9]+}
 
-  String { '"' (!["\\] | "\\" _)* '"' }
+	@precedence { Number, Identifier}
 
-  Boolean { "#t" | "#f" }
+	String { '"' (!["\\] | "\\" _)* '"' }
 
-  LineComment { ";" ![\n]* }
 
-  space { $[ \t\n\r]+ }
+	register { "r" $[0-9]+ | "ra" | "sp" }
+	device { "d" $[0-9]+ | "db"}
 
-  "(" ")"
+	RegDev { register | device}
+
+	// Boolean { "#t" | "#f" }
+
+	LineComment { "#" ![\n]* }
+
+	space { $[ \t\n\r]+ }
+
+	"("[closedBy="("]
+	")"[openedBy=")"]
 }
 
 @detectDelim
