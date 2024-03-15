@@ -1,16 +1,34 @@
 {
-  "name": "lang-ic",
-  "version": "0.0.1",
-  "module": "src/index.ts",
+  "name": "codemirror-lang-ic10",
+  "description": "ic10 language support for codemirror",
+  "author": "Aidan647",
+  "version": "0.1.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stationeers-ic/lang-ic.git"
+  },
+  "keywords": [
+    "codemirror",
+    "ic10"
+  ],
+  "bugs": {
+    "url": "https://github.com/Stationeers-ic/lang-ic/issues"
+  },
+  "homepage": "https://github.com/Stationeers-ic/lang-ic",
+  "license": "CC BY-NC 4.0",
   "scripts": {
     "prepare": "rollup -c"
   },
+  "module": "dist/index.js",
   "main": "dist/index.cjs",
   "exports": {
     "import": "./dist/index.js",
     "require": "./dist/index.cjs"
   },
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@lezer/generator": "^1.6.0",
@@ -19,7 +37,8 @@
     "rollup": "^4.12.1",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-ts": "^3.4.5",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "uglify-js": "^3.17.4"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

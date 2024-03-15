@@ -22,7 +22,7 @@ export const icLanguage = LRLanguage.define({
 				Identifier: t.string,
 				Instruction: t.keyword,
 				LineComment: t.comment,
-				Label: t.url,
+				Label: t.propertyName,
 			}),
 		],
 	}),
