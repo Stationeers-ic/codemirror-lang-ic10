@@ -13,18 +13,16 @@ export const icLanguage = LRLanguage.define({
 	name: "ic10",
 	parser: parser.configure({
 		props: [
-			indentNodeProp.add({
-				Application: delimitedIndent({ closing: ")", align: false }),
-			}),
-			foldNodeProp.add({
-				Application: foldInside,
-			}),
 			styleTags({
-				Identifier: t.variableName,
-				Number: t.number,
-				RegDev: t.bool,
 				String: t.string,
-				LineComment: t.lineComment,
+				Register: t.name,
+				Device: t.bool,
+				Number: t.number,
+				Function: t.self,
+				Identifier: t.string,
+				Instruction: t.keyword,
+				LineComment: t.comment,
+				Label: t.url,
 			}),
 		],
 	}),

@@ -1,46 +1,173 @@
-@top Program { Line* }
+@top Program { Line }
 
-@skip { space | LineComment }
+@skip { space }
 
-expression {
-	Identifier |
-	String |
-	Number |
-	RegDev
-	// Application { "(" expression* ")" }
-}
+Line { (OperatorLine | Label | Hash)? LineComment? "\n"? }
+OperatorLine { Instruction Argument+? }
+Argument { Register | Device | Number | Identifier | Hash }
+Hash { Function "(" String ")"}
+
 
 
 @tokens {
 	Identifier { $[a-zA-Z_\-0-9]+ }
-	Number { $[0-9]+ }
+	Number { "-"? $[0-9_]+ }
 
-	@precedence { RegDev, Operator, Number, Identifier}
-
-	String { '"' (!["\\] | "\\" _)* '"' }
-	Operator { "move" | "sna"}
-
+	Function { "HASH" }
+	Instruction {
+		"l" |
+		"lb" |
+		"s" |
+		"sb" |
+		"ls" |
+		"lr" |
+		"alias" |
+		"define" |
+		"move" |
+		"add" |
+		"sub" |
+		"sdse" |
+		"sdns" |
+		"slt" |
+		"sgt" |
+		"sle" |
+		"sge" |
+		"seq" |
+		"sne" |
+		"sap" |
+		"sna" |
+		"sltz" |
+		"sgtz" |
+		"slez" |
+		"sgez" |
+		"seqz" |
+		"snez" |
+		"sapz" |
+		"snaz" |
+		"and" |
+		"or" |
+		"xor" |
+		"nor" |
+		"mul" |
+		"div" |
+		"mod" |
+		"j" |
+		"bdse" |
+		"bdns" |
+		"blt" |
+		"bgt" |
+		"ble" |
+		"bge" |
+		"beq" |
+		"bne" |
+		"bap" |
+		"bna" |
+		"bltz" |
+		"bgez" |
+		"blez" |
+		"bgtz" |
+		"beqz" |
+		"bnez" |
+		"bapz" |
+		"bnaz" |
+		"jr" |
+		"brdse" |
+		"brdns" |
+		"brlt" |
+		"brgt" |
+		"brle" |
+		"brge" |
+		"breq" |
+		"brne" |
+		"brap" |
+		"brna" |
+		"brltz" |
+		"brgez" |
+		"brlez" |
+		"brgtz" |
+		"breqz" |
+		"brnez" |
+		"brapz" |
+		"brnaz" |
+		"jal" |
+		"bdseal" |
+		"bdnsal" |
+		"bltal" |
+		"bgtal" |
+		"bleal" |
+		"bgeal" |
+		"beqal" |
+		"bneal" |
+		"bapal" |
+		"bnaal" |
+		"bltzal" |
+		"bgezal" |
+		"blezal" |
+		"bgtzal" |
+		"beqzal" |
+		"bnezal" |
+		"bapzal" |
+		"bnazal" |
+		"sqrt" |
+		"round" |
+		"trunc" |
+		"ceil" |
+		"floor" |
+		"max" |
+		"min" |
+		"abs" |
+		"log" |
+		"exp" |
+		"rand" |
+		"yield" |
+		"label" |
+		"peek" |
+		"push" |
+		"pop" |
+		"hcf" |
+		"select" |
+		"sleep" |
+		"sin" |
+		"cos" |
+		"tan" |
+		"asin" |
+		"acos" |
+		"atan" |
+		"atan2" |
+		"ld" |
+		"lbn" |
+		"lbs" |
+		"lbns" |
+		"sd" |
+		"ss" |
+		"sbs" |
+		"snan" |
+		"snanz" |
+		"bnan" |
+		"brnan" |
+		"get" |
+		"getd" |
+		"not" |
+		"poke" |
+		"put" |
+		"putd" |
+		"sbn" |
+		"sla" |
+		"sll" |
+		"sra" |
+		"srl"
+	}
 	Label { @asciiLetter+ ":"}
+	String { ('"' (!["\\] | "\\" _)* '"') | ("'" (!["\\] | "\\" _)* "''") }
 
-	Arguments { RegDev | Number | Identifier}
-
-	OperatorLine { Operator Arguments* }
-
-	Line { (OperatorLine | Label) "\n"}
 
 	Register { "r" $[0-9]+ | "ra" | "sp" }
 	Device { "d" $[0-9]+ | "db"}
 
-	RegDev { Register | Device}
-
-	// Boolean { "#t" | "#f" }
-
 	LineComment { "#" ![\n]* }
 
-	space { $[ \t\n\r]+ }
+	space { $[ \t\r]+ }
 
-	"("[closedBy="("]
-	")"[openedBy=")"]
+
+	@precedence { String, Register, Device, Number, Function, Identifier, Instruction }
 }
-
-@detectDelim
