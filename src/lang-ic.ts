@@ -1,13 +1,6 @@
 import { styleTags, tags as t } from "@lezer/highlight"
 import { parser } from "./syntax.grammar"
-import {
-	LRLanguage,
-	LanguageSupport,
-	delimitedIndent,
-	foldInside,
-	foldNodeProp,
-	indentNodeProp,
-} from "@codemirror/language"
+import { LRLanguage, LanguageSupport } from "@codemirror/language"
 
 export const icLanguage = LRLanguage.define({
 	name: "ic10",
