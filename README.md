@@ -2,6 +2,8 @@
 
 CodeMirror 6 language package for IC10
 
+[![install size](https://packagephobia.com/badge?p=codemirror-lang-ic10)](https://packagephobia.com/result?p=codemirror-lang-ic10)
+
 Usage:
 
 ```ts
