@@ -8,7 +8,7 @@ export default snippets
 
 
 allInstructions.forEach((instruction) => {
-	const snip = instruction.snippet.length === 0 ? instruction.name : `${instruction.name} ${instruction.snippet} `
+	const snip = instruction.snippet.length === 0 ? instruction.name : `${instruction.name} ${instruction.snippet}`
 	snippets.push(
 		snippetCompletion(snip, {
 			boost: instruction.deprecated !== false ? -99 : -10,
