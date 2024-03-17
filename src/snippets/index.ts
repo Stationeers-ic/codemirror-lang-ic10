@@ -1,5 +1,6 @@
-import { icLanguage } from "../lang-ic"
-import { type Completion, snippetCompletion, type CompletionContext } from "@codemirror/autocomplete"
+import { type Completion, type CompletionContext } from "@codemirror/autocomplete"
+import registers from "./registers"
+import snippets from "./snippets"
 
 function getPos(context: CompletionContext): {
 	text: string
@@ -17,7 +18,7 @@ function isFirstWord(line: string, pos: number): boolean {
 	return line.substring(0, pos).match(/\s*\w*$/)?.index === 0
 }
 
-function myCompletions(context: CompletionContext) {
+export function myCompletions(context: CompletionContext) {
 	const word = context.matchBefore(/\w*/)
 
 	if (word?.from == word?.to && !context.explicit) return null
@@ -29,7 +30,8 @@ function myCompletions(context: CompletionContext) {
 	const line = getPos(context)
 	const text = (context.state.doc as {} as { text: string[] }).text
 	const variables: Completion[] = []
-	text.forEach((x) => {
+	text.forEach((x, i) => {
+		if (i+1 === line.line) return
 		const test = reg.exec(x)
 		if (test === null) return
 
@@ -37,32 +39,24 @@ function myCompletions(context: CompletionContext) {
 	})
 	const firstWord = isFirstWord(line.text, line.pos)
 
-	const snippets: Completion[] = [
-		snippetCompletion("alias ${} ${r0}", {
-			boost: -10,
-			label: "alias",
-			info: "Labels register or device reference with name, device references also affect what shows on the screws on the IC base.",
-		}),
-	]
+
 
 	return {
 		from: word?.from ?? context.pos,
 		options: [
 			...(firstWord ? snippets : variables),
-			{ label: "constant", type: "constant" },
-			{ label: "enum", type: "enum" },
-			{ label: "function", type: "function" },
-			{ label: "interface", type: "interface" },
-			{ label: "keyword", type: "keyword" },
-			{ label: "method", type: "method" },
-			{ label: "namespace", type: "namespace" },
-			{ label: "property", type: "property" },
-			{ label: "text", type: "text" },
-			{ label: "type", type: "type" },
-			{ label: "variable", type: "variable" },
+			...(firstWord ? [] : registers),
+			// { label: "constant", type: "constant" },
+			// { label: "enum", type: "enum" },
+			// { label: "function", type: "function" },
+			// { label: "interface", type: "interface" },
+			// { label: "keyword", type: "keyword" },
+			// { label: "method", type: "method" },
+			// { label: "namespace", type: "namespace" },
+			// { label: "property", type: "property" },
+			// { label: "text", type: "text" },
+			// { label: "type", type: "type" },
+			// { label: "variable", type: "variable" },
 		],
 	}
 }
-export const snippets = icLanguage.data.of({
-	autocomplete: myCompletions,
-})

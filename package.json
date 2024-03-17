@@ -2,20 +2,20 @@
   "name": "codemirror-lang-ic10",
   "description": "ic10 language support for codemirror",
   "author": "Aidan647",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Stationeers-ic/lang-ic.git"
+    "url": "https://github.com/Stationeers-ic/codemirror-lang-ic10.git"
   },
   "keywords": [
     "codemirror",
     "ic10"
   ],
   "bugs": {
-    "url": "https://github.com/Stationeers-ic/lang-ic/issues"
+    "url": "https://github.com/Stationeers-ic/codemirror-lang-ic10/issues"
   },
-  "homepage": "https://github.com/Stationeers-ic/lang-ic",
+  "homepage": "https://github.com/Stationeers-ic/codemirror-lang-ic10",
   "license": "CC BY-NC 4.0",
   "scripts": {
     "prepare": "rollup -c"

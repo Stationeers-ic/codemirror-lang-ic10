@@ -1,6 +1,7 @@
 import { styleTags, tags as t } from "@lezer/highlight"
 import { parser } from "./syntax.grammar"
 import { LRLanguage, LanguageSupport } from "@codemirror/language"
+import { myCompletions } from "./snippets"
 
 export const icLanguage = LRLanguage.define({
 	name: "ic10",
@@ -27,3 +28,7 @@ export const icLanguage = LRLanguage.define({
 export function ic10() {
 	return new LanguageSupport(icLanguage)
 }
+
+export const snippets = icLanguage.data.of({
+	autocomplete: myCompletions,
+})
