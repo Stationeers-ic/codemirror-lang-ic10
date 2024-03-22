@@ -11,7 +11,7 @@ Hash { Function "(" String ")"}
 
 @tokens {
 	Identifier { $[a-zA-Z_\-0-9]+ }
-	Number { @digit+ ("." @digit)? @digit+? }
+	Number { "-"? @digit+ ("." @digit)? @digit+? }
 
 	Function { "HASH" }
 	Instruction {

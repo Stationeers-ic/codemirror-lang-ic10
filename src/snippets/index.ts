@@ -1,4 +1,5 @@
 import { type Completion, type CompletionContext } from "@codemirror/autocomplete"
+import { type Text } from "@codemirror/state"
 import registers from "./registers"
 import snippets from "./snippets"
 
@@ -18,17 +19,25 @@ function isFirstWord(line: string, pos: number): boolean {
 	return line.substring(0, pos).match(/\s*\w*$/)?.index === 0
 }
 
+function getLines(doc: Text): string[] {
+	const lines: string[] = []
+	const x = doc.iter()
+	while (!x.next().done) lines.push(x.value)
+	return lines
+}
+
 export function myCompletions(context: CompletionContext) {
 	const word = context.matchBefore(/\w*/)
 
 	if (word?.from == word?.to && !context.explicit) return null
 	const reg = /^\s*alias\s+(\w+)\s+(\w+)/
 
-	console.log(context)
-	console.log(getPos(context))
+	// console.log(context)
+	// console.log(getPos(context))
 
 	const line = getPos(context)
-	const text = (context.state.doc as {} as { text: string[] }).text
+
+	const text = getLines(context.state.doc)
 	const variables: Completion[] = []
 	text.forEach((x, i) => {
 		if (i+1 === line.line) return
