@@ -4,7 +4,7 @@
 
 Line { (OperatorLine | Label | Hash)? LineComment? "\n"? }
 OperatorLine { Instruction Argument+? }
-Argument { Register | Device | Number | Identifier | Hash }
+Argument { Register | Device | Number | Identifier | Hash | Logic }
 Hash { Function "(" String ")"}
 
 
@@ -14,6 +14,195 @@ Hash { Function "(" String ")"}
 	Number { "-"? @digit+ ("." @digit)? @digit+? }
 
 	Function { "HASH" }
+	Logic {
+		"Mode" |
+		"ReferenceId" |
+		"Open" |
+		"Lock" |
+		"Setting" |
+		"On" |
+		"Idle" |
+		"PrefabHash" |
+		"Power" |
+		"Error" |
+		"Activate" |
+		"RequiredPower" |
+		"Time" |
+		"Bpm" |
+		"Volume" |
+		"Pressure" |
+		"Temperature" |
+		"RatioOxygen" |
+		"RatioCarbonDioxide" |
+		"RatioNitrogen" |
+		"RatioPollutant" |
+		"RatioVolatiles" |
+		"RatioWater" |
+		"Maximum" |
+		"Ratio" |
+		"TotalMoles" |
+		"RatioNitrousOxide" |
+		"Combustion" |
+		"PressureInput" |
+		"TemperatureInput" |
+		"RatioOxygenInput" |
+		"RatioCarbonDioxideInput" |
+		"RatioNitrogenInput" |
+		"RatioPollutantInput" |
+		"RatioVolatilesInput" |
+		"RatioWaterInput" |
+		"RatioNitrousOxideInput" |
+		"TotalMolesInput" |
+		"PressureOutput" |
+		"TemperatureOutput" |
+		"RatioOxygenOutput" |
+		"RatioCarbonDioxideOutput" |
+		"RatioNitrogenOutput" |
+		"RatioPollutantOutput" |
+		"RatioVolatilesOutput" |
+		"RatioWaterOutput" |
+		"RatioNitrousOxideOutput" |
+		"TotalMolesOutput" |
+		"CombustionInput" |
+		"CombustionOutput" |
+		"SoundAlert" |
+		"Flush" |
+		"PressureExternal" |
+		"PressureSetting" |
+		"TemperatureSetting" |
+		"TemperatureExternal" |
+		"Filtration" |
+		"AirRelease" |
+		"PositionX" |
+		"PositionY" |
+		"PositionZ" |
+		"VelocityMagnitude" |
+		"VelocityRelativeX" |
+		"VelocityRelativeY" |
+		"VelocityRelativeZ" |
+		"ForwardX" |
+		"ForwardY" |
+		"ForwardZ" |
+		"Orientation" |
+		"VelocityX" |
+		"VelocityY" |
+		"VelocityZ" |
+		"EntityState" |
+		"LineNumber" |
+		"Vertical" |
+		"ContactTypeId" |
+		"TargetX" |
+		"TargetY" |
+		"TargetZ" |
+		"MineablesInVicinity" |
+		"MineablesInQueue" |
+		"PressureInternal" |
+		"Quantity" |
+		"ClearMemory" |
+		"ExportCount" |
+		"ImportCount" |
+		"Reagents" |
+		"RecipeHash" |
+		"SettingInput" |
+		"SettingOutput" |
+		"CompletionRatio" |
+		"PressureOutput2" |
+		"TemperatureOutput2" |
+		"RatioOxygenOutput2" |
+		"RatioCarbonDioxideOutput2" |
+		"RatioNitrogenOutput2" |
+		"RatioPollutantOutput2" |
+		"RatioVolatilesOutput2" |
+		"RatioWaterOutput2" |
+		"RatioNitrousOxideOutput2" |
+		"TotalMolesOutput2" |
+		"CombustionOutput2" |
+		"OperationalTemperatureEfficiency" |
+		"TemperatureDifferentialEfficiency" |
+		"PressureEfficiency" |
+		"Charge" |
+		"PowerPotential" |
+		"PowerActual" |
+		"Color" |
+		"PowerRequired" |
+		"RatioLiquidNitrogen" |
+		"VolumeOfLiquid" |
+		"RatioLiquidOxygen" |
+		"RatioLiquidVolatiles" |
+		"RatioSteam" |
+		"RatioLiquidCarbonDioxide" |
+		"RatioLiquidPollutant" |
+		"RatioLiquidNitrousOxide" |
+		"CombustionLimiter" |
+		"Throttle" |
+		"Rpm" |
+		"Stress" |
+		"Horizontal" |
+		"SolarAngle" |
+		"SolarIrradiance" |
+		"ElevatorSpeed" |
+		"ElevatorLevel" |
+		"PowerGeneration" |
+		"PassedMoles" |
+		"HorizontalRatio" |
+		"VerticalRatio" |
+		"CelestialHash" |
+		"AlignmentError" |
+		"DistanceAu" |
+		"OrbitPeriod" |
+		"Inclination" |
+		"Eccentricity" |
+		"SemiMajorAxis" |
+		"DistanceKm" |
+		"CelestialParentHash" |
+		"TrueAnomaly" |
+		"Plant" |
+		"Harvest" |
+		"SignalStrength" |
+		"SignalID" |
+		"InterrogationProgress" |
+		"TargetPadIndex" |
+		"SizeX" |
+		"SizeZ" |
+		"MinimumWattsToContact" |
+		"WattsReachingContact" |
+		"ForceWrite" |
+		"PressureInput2" |
+		"TemperatureInput2" |
+		"RatioOxygenInput2" |
+		"RatioCarbonDioxideInput2" |
+		"RatioNitrogenInput2" |
+		"RatioPollutantInput2" |
+		"RatioVolatilesInput2" |
+		"RatioWaterInput2" |
+		"RatioNitrousOxideInput2" |
+		"TotalMolesInput2" |
+		"CombustionInput2" |
+		"RequestHash" |
+		"CurrentResearchPodType" |
+		"ManualResearchRequiredPod" |
+		"Progress" |
+		"DestinationCode" |
+		"Acceleration" |
+		"AutoShutOff" |
+		"Mass" |
+		"DryMass" |
+		"Thrust" |
+		"Weight" |
+		"ThrustToWeight" |
+		"TimeToDestination" |
+		"BurnTimeRemaining" |
+		"AutoLand" |
+		"FlightControlRule" |
+		"ReEntryAltitude" |
+		"Apex" |
+		"Index" |
+		"DrillCondition" |
+		"Output" |
+		"EnvironmentEfficiency" |
+		"WorkingGasEfficiency" |
+		"NextWeatherEventTime"
+	}
 	Instruction {
 		"l" |
 		"lb" |
@@ -169,5 +358,5 @@ Hash { Function "(" String ")"}
 	space { $[ \t\r]+ }
 
 
-	@precedence { String, Register, Device, Number, Function, Identifier, Instruction }
+	@precedence { Logic, String, Register, Device, Number, Function, Identifier, Instruction }
 }

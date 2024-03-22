@@ -2,6 +2,7 @@ import { type Completion, type CompletionContext } from "@codemirror/autocomplet
 import { type Text } from "@codemirror/state"
 import registers from "./registers"
 import snippets from "./snippets"
+import logic from "./logic"
 
 function getPos(context: CompletionContext): {
 	text: string
@@ -55,6 +56,7 @@ export function myCompletions(context: CompletionContext) {
 		options: [
 			...(firstWord ? snippets : variables),
 			...(firstWord ? [] : registers),
+			...(firstWord ? [] : logic),
 			// { label: "constant", type: "constant" },
 			// { label: "enum", type: "enum" },
 			// { label: "function", type: "function" },
