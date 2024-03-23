@@ -31,23 +31,29 @@ export function myCompletions(context: CompletionContext) {
 	const word = context.matchBefore(/\w*/)
 
 	if (word?.from == word?.to && !context.explicit) return null
-	const reg = /^\s*alias\s+(\w+)\s+(\w+)/
+	const reg = /^\s*(alias|define)\s+(\w+)\s+(\w+)/
 
 	// console.log(context)
 	// console.log(getPos(context))
 
 	const line = getPos(context)
-
+	const firstWord = isFirstWord(line.text, line.pos)
 	const text = getLines(context.state.doc)
 	const variables: Completion[] = []
-	text.forEach((x, i) => {
-		if (i+1 === line.line) return
-		const test = reg.exec(x)
-		if (test === null) return
-
-		variables.push({ label: test[1], type: "variable", apply: test[1] + " ", detail: test[2], boost: 10 })
-	})
-	const firstWord = isFirstWord(line.text, line.pos)
+	if (!firstWord)
+		text.forEach((x, i) => {
+			if (i + 1 === line.line) return
+			const test = reg.exec(x)
+			if (test === null) return
+			console.log(test)
+			variables.push({
+				label: test[2],
+				type: test[1] === "alias" ? "variable" : "constant",
+				apply: test[2] + " ",
+				detail: test[3],
+				boost: 10,
+			})
+		})
 
 
 

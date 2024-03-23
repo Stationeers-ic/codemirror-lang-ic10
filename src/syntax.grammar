@@ -2,7 +2,7 @@
 
 @skip { space }
 
-Line { (OperatorLine | Label | Hash)? LineComment? "\n"? }
+Line { (OperatorLine | Label)? LineComment? "\n"? }
 OperatorLine { Instruction Argument+? }
 Argument { Register | Device | Number | Identifier | Hash | Logic }
 Hash { Function "(" String ")"}
