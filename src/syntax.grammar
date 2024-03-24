@@ -346,7 +346,7 @@ Hash { Function "(" String ")"}
 		"sra" |
 		"srl"
 	}
-	Label { @asciiLetter+ ":"}
+	Label { $[a-zA-Z] $[a-zA-Z_\-0-9]* ":"}
 	String { ('"' (!["\\] | "\\" _)* '"') | ("'" (!["\\] | "\\" _)* "''") }
 
 

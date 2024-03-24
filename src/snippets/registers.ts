@@ -1,6 +1,6 @@
 import { type Completion } from "@codemirror/autocomplete"
 
-const registers: Completion[] = [
+const registers = (): Completion[] => [
 	"r0",
 	"r1",
 	"r2",

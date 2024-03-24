@@ -1,7 +1,8 @@
+import type {snippetsArguments, snippetsOptions} from "./types"
 import { styleTags, tags as t } from "@lezer/highlight"
 import { parser } from "./syntax.grammar"
 import { LRLanguage, LanguageSupport } from "@codemirror/language"
-import { myCompletions } from "./snippets"
+import { ic10Snippets as snippet } from "./snippets"
 
 export const icLanguage = LRLanguage.define({
 	name: "ic10",
@@ -30,6 +31,23 @@ export function ic10() {
 	return new LanguageSupport(icLanguage)
 }
 
-export const snippets = icLanguage.data.of({
-	autocomplete: myCompletions,
-})
+// export type snippetsArguments = {
+// 	snippets: boolean
+// 	variables: boolean
+// 	registers: boolean
+// 	logic: boolean
+// }
+
+
+export const ic10Snippets = (snippetsArguments?: snippetsOptions) => {
+	const args: snippetsArguments = {
+		...snippetsArguments,
+		snippets: true,
+		variables: true,
+		registers: true,
+		logic: true,
+	}
+	return icLanguage.data.of({
+		autocomplete: snippet(args),
+	})
+}
