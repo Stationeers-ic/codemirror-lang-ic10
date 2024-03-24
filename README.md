@@ -8,13 +8,14 @@ Usage:
 
 ```ts
 import { EditorView, basicSetup } from "codemirror";
-import { ic10, snippets } from "codemirror-lang-ic10";
+import { ic10, ic10Snippets, ic10HoverTooltip } from "codemirror-lang-ic10";
 
 new EditorView({
   extensions: [
     basicSetup,
     ic10(),
-    snippets,
+    ic10Snippets(),
+    ic10HoverTooltip(),
   ],
   parent: document.querySelector("#editor"),
 });
