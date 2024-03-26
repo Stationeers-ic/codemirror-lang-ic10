@@ -3,8 +3,13 @@ import { hoverTooltip } from "@codemirror/view"
 import allInstructions from "./allInstructions"
 import allLogic from "./allLogic"
 import getVariables from "./getVariables"
+import type { hoverArguments, hoverOptions } from "../types"
 
-export const ic10HoverTooltip = (): Extension => {
+export const ic10HoverTooltip = (options?: hoverOptions): Extension => {
+	const opt: hoverArguments = {
+		startLine: 1,
+		...options,
+	}
 	const instructions = allInstructions.reduce<Record<string, (typeof allInstructions)[number]>>((acc, cur) => {
 		acc[cur.name] = cur
 		return acc
@@ -14,7 +19,7 @@ export const ic10HoverTooltip = (): Extension => {
 		return acc
 	}, {})
 	return hoverTooltip((view, pos, side) => {
-		let { from, to, text } = view.state.doc.lineAt(pos)
+		let { from, to, text, number } = view.state.doc.lineAt(pos)
 		let start = pos,
 			end = pos
 		while (start > from && /\w/.test(text[start - from - 1])) start--
@@ -22,16 +27,18 @@ export const ic10HoverTooltip = (): Extension => {
 		if ((start == pos && side < 0) || (end == pos && side > 0)) return null
 		const word = text.slice(start - from, end - from)
 
-		const variables = getVariables(view.state.doc).reduce<Record<string, string>>((acc, cur) => {
-			if (cur.type === "variable") acc[cur.label] = `Alias: ${cur.detail}`
-			if (cur.type === "constant") acc[cur.label] = `Define: ${cur.detail}`
-			if (cur.type === "enum") acc[cur.label] = `Label: line ${cur.detail?.slice(1)}`
+		const variables = getVariables(view.state.doc).reduce<Record<string, [string, string | undefined]>>((acc, cur) => {
+			if (cur.type === "variable") acc[cur.label] = [`Alias: ${cur.detail}`, cur.detail]
+			if (cur.type === "constant") acc[cur.label] = [`Define: ${cur.detail}`, cur.detail]
+			if (cur.type === "enum") acc[cur.label] = [`Label: line ${Number(cur.detail?.slice(1)) - (1 - opt.startLine)}`, cur.detail]
 			return acc
 		}, {})
 
-		let result = ""
+		let result: string | null = ""
+		let detail: string | undefined = undefined
 		if (word in variables) {
-			result = variables[word]
+			result = variables[word][0]
+			detail = variables[word][1]
 		} else if (word in logic) {
 			result = logic[word].description
 		} else if (word in instructions) {
@@ -39,13 +46,19 @@ export const ic10HoverTooltip = (): Extension => {
 			result += "\n"
 			result += instructions[word].description
 		} else return null
+		if (opt.callback)
+			result = opt.callback(
+				result,
+				number,
+				detail,
+			)
+		if (result === null) return null
 		return {
 			pos: start,
 			end,
 			above: true,
 			create(view) {
-				// @ts-ignore
-				let dom = document.createElement("pre")
+				const dom = document.createElement("pre")
 				dom.dataset.ic10lang = "tooltip"
 				dom.textContent = result
 				return { dom }

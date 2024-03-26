@@ -41,11 +41,11 @@ export function ic10() {
 
 export const ic10Snippets = (snippetsArguments?: snippetsOptions) => {
 	const args: snippetsArguments = {
-		...snippetsArguments,
 		snippets: true,
 		variables: true,
 		registers: true,
 		logic: true,
+		...snippetsArguments,
 	}
 	return icLanguage.data.of({
 		autocomplete: snippet(args),
