@@ -18,6 +18,6 @@ export type gutterArguments = {
 export type gutterOptions = Partial<gutterArguments>
 export type hoverArguments = {
 	startLine: number
-	callback?: (text: string, line: number, value?: string) => string | null
+	callback?: (word:string,text: string, line: number, value?: string) => string | null
 }
 export type hoverOptions = Partial<hoverArguments>
