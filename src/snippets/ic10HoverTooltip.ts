@@ -45,7 +45,9 @@ export const ic10HoverTooltip = (options?: hoverOptions): Extension => {
 			result += instructions[word].preview
 			result += "\n"
 			result += instructions[word].description
-		} else return null
+		} else {
+			result = null
+		}
 		if (opt.callback)
 			result = opt.callback(
 				word,
