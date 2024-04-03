@@ -2,7 +2,7 @@
   "name": "codemirror-lang-ic10",
   "description": "ic10 language support for codemirror",
   "author": "Aidan647",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "type": "module",
   "sideEffects": false,
   "repository": {
