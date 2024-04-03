@@ -13,6 +13,8 @@ export const icLanguage = LRLanguage.define({
 				Register: t.name,
 				Device: t.bool,
 				Number: t.number,
+				Hex: t.number,
+				Bin: t.number,
 				Function: t.self,
 				Identifier: t.string,
 				Instruction: t.keyword,

@@ -4,7 +4,7 @@
 
 Line { (OperatorLine | Label)? LineComment? "\n"? }
 OperatorLine { Instruction Argument+? }
-Argument { Register | Device | Number | Identifier | Hash | Logic }
+Argument { Register | Device | Number | Identifier | Hash | Logic | Hex | Bin }
 Hash { Function "(" String ")"}
 
 
@@ -12,7 +12,8 @@ Hash { Function "(" String ")"}
 @tokens {
 	Identifier { $[a-zA-Z_\-0-9]+ }
 	Number { "-"? @digit+ ("." @digit)? @digit+? }
-
+	Hex { "$" $[a-fA-F0-9]+}
+	Bin { "%" $[01]+}
 	Function { "HASH" }
 	Logic {
 		"Mode" |
@@ -358,5 +359,5 @@ Hash { Function "(" String ")"}
 	space { $[ \t\r]+ }
 
 
-	@precedence { Logic, String, Register, Device, Number, Function, Identifier, Instruction }
+	@precedence { Hex, Bin, Logic, String, Register, Device, Number, Function, Identifier, Instruction }
 }
