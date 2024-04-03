@@ -12,8 +12,8 @@ Hash { Function "(" String ")"}
 @tokens {
 	Identifier { $[a-zA-Z_\-0-9]+ }
 	Number { "-"? @digit+ ("." @digit)? @digit+? }
-	Hex { "$" $[a-fA-F0-9]+}
-	Bin { "%" $[01]+}
+	Hex { "$" $[a-fA-F0-9_]+}
+	Bin { "%" $[01_]+}
 	Function { "HASH" }
 	Logic {
 		"Mode" |
