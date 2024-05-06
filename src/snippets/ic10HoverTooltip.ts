@@ -22,8 +22,8 @@ export const ic10HoverTooltip = (options?: hoverOptions): Extension => {
 		let { from, to, text, number } = view.state.doc.lineAt(pos)
 		let start = pos,
 			end = pos
-		while (start > from && /\w/.test(text[start - from - 1])) start--
-		while (end < to && /\w/.test(text[end - from])) end++
+		while (start > from && /[\w.]/.test(text[start - from - 1])) start--
+		while (end < to && /[\w.]/.test(text[end - from])) end++
 		if ((start == pos && side < 0) || (end == pos && side > 0)) return null
 		const word = text.slice(start - from, end - from)
 
