@@ -2,7 +2,7 @@
   "name": "codemirror-lang-ic10",
   "description": "ic10 language support for codemirror",
   "author": "Aidan647",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "type": "module",
   "sideEffects": false,
   "repository": {
@@ -19,7 +19,8 @@
   "homepage": "https://github.com/Stationeers-ic/codemirror-lang-ic10",
   "license": "CC BY-NC 4.0",
   "scripts": {
-    "prepare": "rollup -c"
+    "prepack": "rollup -c",
+    "build": "bun ./tools/update_data.ts && bun run prepack"
   },
   "module": "dist/index.js",
   "main": "dist/index.cjs",
@@ -33,13 +34,13 @@
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@codemirror/state": "^6.4.1",
-    "@lezer/generator": "^1.6.0",
+    "@lezer/generator": "^1.7.0",
     "@types/bun": "latest",
     "prettier": "^3.2.5",
-    "rollup": "^4.12.1",
+    "rollup": "^4.17.2",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-ts": "^3.4.5",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.5",
     "uglify-js": "^3.17.4",
     "@lezer/lr": "^1.4.0"
   },
@@ -47,9 +48,9 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@codemirror/autocomplete": "^6.15.0",
+    "@codemirror/autocomplete": "^6.16.0",
     "@codemirror/language": "^6.10.1",
-    "@codemirror/view": "^6.26.0",
+    "@codemirror/view": "^6.26.3",
     "@lezer/highlight": "^1.2.0"
   }
 }

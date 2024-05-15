@@ -21,6 +21,7 @@ export const icLanguage = LRLanguage.define({
 				LineComment: t.comment,
 				Label: t.propertyName,
 				Logic: t.propertyName,
+				Constants: t.propertyName,
 			}),
 		],
 	}),
