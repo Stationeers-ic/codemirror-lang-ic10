@@ -4,7 +4,7 @@
 
 Line { (OperatorLine | Label)? LineComment? "\n"? }
 OperatorLine { Instruction Argument+? }
-Argument { Register | Device | Number | Identifier | Hash | Logic | Hex | Bin }
+Argument { Register | Device | Number | Identifier | Hash | Logic | Constants | Hex | Bin }
 Hash { Function "(" String ")"}
 
 
@@ -15,7 +15,9 @@ Hash { Function "(" String ")"}
 	Hex { "$" $[a-fA-F0-9_]+}
 	Bin { "%" $[01_]+}
 	Function { "HASH" }
+
 	Logic {
+		// startLogic
 		"Mode" |
 		"ReferenceId" |
 		"Open" |
@@ -202,7 +204,12 @@ Hash { Function "(" String ")"}
 		"Output" |
 		"EnvironmentEfficiency" |
 		"WorkingGasEfficiency" |
-		"NextWeatherEventTime" |
+		"NextWeatherEventTime"
+		// endLogic
+	}
+
+	Constants {
+		// startConst
 		"nan" |
 		"pinf" |
 		"ninf" |
@@ -387,7 +394,9 @@ Hash { Function "(" String ")"}
 		"SorterInstruction.FilterSlotTypeCompare" |
 		"SorterInstruction.FilterQuantityCompare" |
 		"SorterInstruction.LimitNextExecutionByCount"
+		// endConst
 	}
+
 	Instruction {
 		"l" |
 		"lb" |
@@ -543,5 +552,5 @@ Hash { Function "(" String ")"}
 	space { $[ \t\r]+ }
 
 
-	@precedence { Hex, Bin, Logic, String, Register, Device, Number, Function, Identifier, Instruction }
+	@precedence { Hex, Bin, Logic, Constants, String, Register, Device, Number, Function, Identifier, Instruction }
 }
