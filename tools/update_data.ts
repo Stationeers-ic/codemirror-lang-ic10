@@ -1,5 +1,8 @@
 import fs from "fs/promises"
 import { dirname, join } from "path"
+
+import allInstructions from "../src/snippets/allInstructions"
+
 let grammar = await fs.readFile(join(dirname(__dirname), "src", "syntax.grammar"), "utf8")
 
 // read src/syntax.grammar
@@ -21,8 +24,7 @@ let grammar = await fs.readFile(join(dirname(__dirname), "src", "syntax.grammar"
 		regex,
 		`// startLogic\n\t\t${logics.data
 			.filter((e: any) => e.name)
-			.map(
-				(e: any) => `"${e.name}"`)
+			.map((e: any) => `"${e.name}"`)
 			.sort()
 			.join(" |\n\t\t")}\n\t\t// endLogic`,
 	)
@@ -30,6 +32,22 @@ let grammar = await fs.readFile(join(dirname(__dirname), "src", "syntax.grammar"
 {
 	const instructions = await fetch("https://assets.ic10.dev/languages/EN/instructions.json").then((e) => e.json())
 	const regex = /\/\/ startInstruction(.*)\/\/ endInstruction/gs
+	let d = false
+	Object.keys(instructions).forEach((x: string) => {
+		if (!allInstructions.find((e) => e.name === x)) {
+			d = true
+			console.warn("Instruction", x, "not found in allInstructions.")
+		}
+	})
+	if (d) console.error("Please add snippets")
+	d = false
+	allInstructions.forEach((x) => {
+		if (!Object.keys(instructions).find((e: string) => e === x.name)) {
+			d = true
+			console.warn("Instruction", x.name, "found in allInstructions.")
+		}
+	})
+	if (d) console.error("Please remove snippets")
 	grammar = grammar.replace(
 		regex,
 		`// startInstruction\n\t\t${Object.keys(instructions)
