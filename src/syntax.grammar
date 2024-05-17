@@ -626,5 +626,5 @@ Hash { Function "(" String ")"}
 	space { $[ \t\r]+ }
 
 
-	@precedence { Hex, Bin, Logic, Constants, String, Register, Device, Number, Function, Identifier, Instruction }
+	@precedence { Hex, Bin, Constants, Logic, String, Register, Device, Number, Function, Identifier, Instruction }
 }
