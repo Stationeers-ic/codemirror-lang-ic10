@@ -42,6 +42,17 @@ let grammar = await fs.readFile(join(dirname(__dirname), "src", "syntax.grammar"
 	if (d) console.error("Please add snippets")
 	d = false
 	allInstructions.forEach((x) => {
+		const ins = instructions[x.name]
+		if (!ins) return
+		const text = ins.description.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("\\", "").trim()
+		if (text !== x.description) {
+			d = true
+			console.warn("Instruction", x.name, "description mismatch.")
+		}
+	})
+	if (d) console.error("Please update snippets")
+	d = false
+	allInstructions.forEach((x) => {
 		if (!Object.keys(instructions).find((e: string) => e === x.name)) {
 			d = true
 			console.warn("Instruction", x.name, "found in allInstructions.")

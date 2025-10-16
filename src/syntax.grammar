@@ -14,255 +14,267 @@ Hash { Function "(" String ")"}
 	Number { "-"? @digit+ ("." @digit)? @digit+? }
 	Hex { "$" $[a-fA-F0-9_]+}
 	Bin { "%" $[01_]+}
-	Function { "HASH" }
+	Function { "HASH" | "STR" }
 
 	Logic {
 		// startLogic
-		"Acceleration" |
-		"Activate" |
-		"AirRelease" |
-		"AlignmentError" |
-		"Apex" |
-		"AutoLand" |
-		"AutoShutOff" |
-		"BestContactFilter" |
-		"Bpm" |
-		"BurnTimeRemaining" |
-		"CelestialHash" |
-		"CelestialParentHash" |
-		"Channel0" |
-		"Channel1" |
-		"Channel2" |
-		"Channel3" |
-		"Channel4" |
-		"Channel5" |
-		"Channel6" |
-		"Channel7" |
-		"Charge" |
-		"Chart" |
-		"ChartedNavPoints" |
-		"ClearMemory" |
-		"CollectableGoods" |
-		"Color" |
-		"Combustion" |
-		"CombustionInput" |
-		"CombustionInput2" |
-		"CombustionLimiter" |
-		"CombustionOutput" |
-		"CombustionOutput2" |
-		"CompletionRatio" |
-		"ContactTypeId" |
-		"CurrentCode" |
-		"CurrentResearchPodType" |
-		"Density" |
-		"DestinationCode" |
-		"Discover" |
-		"DistanceAu" |
-		"DistanceKm" |
-		"DrillCondition" |
-		"DryMass" |
-		"Eccentricity" |
-		"ElevatorLevel" |
-		"ElevatorSpeed" |
-		"EntityState" |
-		"EnvironmentEfficiency" |
-		"Error" |
-		"ExhaustVelocity" |
-		"ExportCount" |
-		"Filtration" |
-		"FlightControlRule" |
-		"Flush" |
-		"ForceWrite" |
-		"ForwardX" |
-		"ForwardY" |
-		"ForwardZ" |
-		"Fuel" |
-		"Harvest" |
-		"Horizontal" |
-		"HorizontalRatio" |
-		"Idle" |
-		"ImportCount" |
-		"Inclination" |
-		"Index" |
-		"InterrogationProgress" |
-		"LineNumber" |
-		"Lock" |
-		"ManualResearchRequiredPod" |
-		"Mass" |
-		"Maximum" |
-		"MineablesInQueue" |
-		"MineablesInVicinity" |
-		"MinedQuantity" |
-		"MinimumWattsToContact" |
-		"Mode" |
-		"NameHash" |
-		"NavPoints" |
-		"NextWeatherEventTime" |
-		"On" |
-		"Open" |
-		"OperationalTemperatureEfficiency" |
-		"OrbitPeriod" |
-		"Orientation" |
-		"Output" |
-		"PassedMoles" |
-		"Plant" |
-		"PositionX" |
-		"PositionY" |
-		"PositionZ" |
-		"Power" |
-		"PowerActual" |
-		"PowerGeneration" |
-		"PowerPotential" |
-		"PowerRequired" |
-		"PrefabHash" |
-		"Pressure" |
-		"PressureEfficiency" |
-		"PressureExternal" |
-		"PressureInput" |
-		"PressureInput2" |
-		"PressureInternal" |
-		"PressureOutput" |
-		"PressureOutput2" |
-		"PressureSetting" |
-		"Progress" |
-		"Quantity" |
-		"Ratio" |
-		"RatioCarbonDioxide" |
-		"RatioCarbonDioxideInput" |
-		"RatioCarbonDioxideInput2" |
-		"RatioCarbonDioxideOutput" |
-		"RatioCarbonDioxideOutput2" |
-		"RatioHydrogen" |
-		"RatioLiquidCarbonDioxide" |
-		"RatioLiquidCarbonDioxideInput" |
-		"RatioLiquidCarbonDioxideInput2" |
-		"RatioLiquidCarbonDioxideOutput" |
-		"RatioLiquidCarbonDioxideOutput2" |
-		"RatioLiquidHydrogen" |
-		"RatioLiquidNitrogen" |
-		"RatioLiquidNitrogenInput" |
-		"RatioLiquidNitrogenInput2" |
-		"RatioLiquidNitrogenOutput" |
-		"RatioLiquidNitrogenOutput2" |
-		"RatioLiquidNitrousOxide" |
-		"RatioLiquidNitrousOxideInput" |
-		"RatioLiquidNitrousOxideInput2" |
-		"RatioLiquidNitrousOxideOutput" |
-		"RatioLiquidNitrousOxideOutput2" |
-		"RatioLiquidOxygen" |
-		"RatioLiquidOxygenInput" |
-		"RatioLiquidOxygenInput2" |
-		"RatioLiquidOxygenOutput" |
-		"RatioLiquidOxygenOutput2" |
-		"RatioLiquidPollutant" |
-		"RatioLiquidPollutantInput" |
-		"RatioLiquidPollutantInput2" |
-		"RatioLiquidPollutantOutput" |
-		"RatioLiquidPollutantOutput2" |
-		"RatioLiquidVolatiles" |
-		"RatioLiquidVolatilesInput" |
-		"RatioLiquidVolatilesInput2" |
-		"RatioLiquidVolatilesOutput" |
-		"RatioLiquidVolatilesOutput2" |
-		"RatioNitrogen" |
-		"RatioNitrogenInput" |
-		"RatioNitrogenInput2" |
-		"RatioNitrogenOutput" |
-		"RatioNitrogenOutput2" |
-		"RatioNitrousOxide" |
-		"RatioNitrousOxideInput" |
-		"RatioNitrousOxideInput2" |
-		"RatioNitrousOxideOutput" |
-		"RatioNitrousOxideOutput2" |
-		"RatioOxygen" |
-		"RatioOxygenInput" |
-		"RatioOxygenInput2" |
-		"RatioOxygenOutput" |
-		"RatioOxygenOutput2" |
-		"RatioPollutant" |
-		"RatioPollutantInput" |
-		"RatioPollutantInput2" |
-		"RatioPollutantOutput" |
-		"RatioPollutantOutput2" |
-		"RatioPollutedWater" |
-		"RatioSteam" |
-		"RatioSteamInput" |
-		"RatioSteamInput2" |
-		"RatioSteamOutput" |
-		"RatioSteamOutput2" |
-		"RatioVolatiles" |
-		"RatioVolatilesInput" |
-		"RatioVolatilesInput2" |
-		"RatioVolatilesOutput" |
-		"RatioVolatilesOutput2" |
-		"RatioWater" |
-		"RatioWaterInput" |
-		"RatioWaterInput2" |
-		"RatioWaterOutput" |
-		"RatioWaterOutput2" |
-		"ReEntryAltitude" |
-		"Reagents" |
-		"RecipeHash" |
-		"ReferenceId" |
-		"RequestHash" |
-		"RequiredPower" |
-		"ReturnFuelCost" |
-		"Richness" |
-		"Rpm" |
-		"SemiMajorAxis" |
-		"Setting" |
-		"SettingInput" |
-		"SettingOutput" |
-		"SignalID" |
-		"SignalStrength" |
-		"Sites" |
-		"Size" |
-		"SizeX" |
-		"SizeY" |
-		"SizeZ" |
-		"SolarAngle" |
-		"SolarIrradiance" |
-		"SoundAlert" |
-		"Stress" |
-		"Survey" |
-		"TargetPadIndex" |
-		"TargetX" |
-		"TargetY" |
-		"TargetZ" |
-		"Temperature" |
-		"TemperatureDifferentialEfficiency" |
-		"TemperatureExternal" |
-		"TemperatureInput" |
-		"TemperatureInput2" |
-		"TemperatureOutput" |
-		"TemperatureOutput2" |
-		"TemperatureSetting" |
-		"Throttle" |
-		"Thrust" |
-		"ThrustToWeight" |
-		"Time" |
-		"TimeToDestination" |
-		"TotalMoles" |
-		"TotalMolesInput" |
-		"TotalMolesInput2" |
-		"TotalMolesOutput" |
-		"TotalMolesOutput2" |
-		"TotalQuantity" |
-		"TrueAnomaly" |
-		"VelocityMagnitude" |
-		"VelocityRelativeX" |
-		"VelocityRelativeY" |
-		"VelocityRelativeZ" |
-		"VelocityX" |
-		"VelocityY" |
-		"VelocityZ" |
-		"Vertical" |
-		"VerticalRatio" |
-		"Volume" |
-		"VolumeOfLiquid" |
-		"WattsReachingContact" |
-		"Weight" |
-		"WorkingGasEfficiency"
+		"LogicType.Acceleration" |
+		"LogicType.Activate" |
+		"LogicType.AirRelease" |
+		"LogicType.AlignmentError" |
+		"LogicType.Altitude" |
+		"LogicType.Apex" |
+		"LogicType.AutoLand" |
+		"LogicType.AutoShutOff" |
+		"LogicType.BestContactFilter" |
+		"LogicType.Bpm" |
+		"LogicType.BurnTimeRemaining" |
+		"LogicType.CelestialHash" |
+		"LogicType.CelestialParentHash" |
+		"LogicType.Channel0" |
+		"LogicType.Channel1" |
+		"LogicType.Channel2" |
+		"LogicType.Channel3" |
+		"LogicType.Channel4" |
+		"LogicType.Channel5" |
+		"LogicType.Channel6" |
+		"LogicType.Channel7" |
+		"LogicType.Charge" |
+		"LogicType.Chart" |
+		"LogicType.ChartedNavPoints" |
+		"LogicType.ClearMemory" |
+		"LogicType.CollectableGoods" |
+		"LogicType.Color" |
+		"LogicType.Combustion" |
+		"LogicType.CombustionInput" |
+		"LogicType.CombustionInput2" |
+		"LogicType.CombustionLimiter" |
+		"LogicType.CombustionOutput" |
+		"LogicType.CombustionOutput2" |
+		"LogicType.CompletionRatio" |
+		"LogicType.ContactTypeId" |
+		"LogicType.CurrentCode" |
+		"LogicType.CurrentResearchPodType" |
+		"LogicType.Density" |
+		"LogicType.DerivativeGain" |
+		"LogicType.DestinationCode" |
+		"LogicType.Discover" |
+		"LogicType.DistanceAu" |
+		"LogicType.DistanceKm" |
+		"LogicType.DrillCondition" |
+		"LogicType.DryMass" |
+		"LogicType.Eccentricity" |
+		"LogicType.ElevatorLevel" |
+		"LogicType.ElevatorSpeed" |
+		"LogicType.EntityState" |
+		"LogicType.EnvironmentEfficiency" |
+		"LogicType.Error" |
+		"LogicType.ExhaustVelocity" |
+		"LogicType.ExportCount" |
+		"LogicType.Extended" |
+		"LogicType.Filtration" |
+		"LogicType.FlightControlRule" |
+		"LogicType.Flush" |
+		"LogicType.ForceWrite" |
+		"LogicType.ForwardX" |
+		"LogicType.ForwardY" |
+		"LogicType.ForwardZ" |
+		"LogicType.Fuel" |
+		"LogicType.Harvest" |
+		"LogicType.Horizontal" |
+		"LogicType.HorizontalRatio" |
+		"LogicType.Idle" |
+		"LogicType.ImportCount" |
+		"LogicType.Inclination" |
+		"LogicType.Index" |
+		"LogicType.IntegralGain" |
+		"LogicType.InterrogationProgress" |
+		"LogicType.LineNumber" |
+		"LogicType.Lock" |
+		"LogicType.ManualResearchRequiredPod" |
+		"LogicType.Mass" |
+		"LogicType.Maximum" |
+		"LogicType.MineablesInQueue" |
+		"LogicType.MineablesInVicinity" |
+		"LogicType.MinedQuantity" |
+		"LogicType.Minimum" |
+		"LogicType.MinimumWattsToContact" |
+		"LogicType.Mode" |
+		"LogicType.NameHash" |
+		"LogicType.NavPoints" |
+		"LogicType.NetworkFault" |
+		"LogicType.NextWeatherEventTime" |
+		"LogicType.On" |
+		"LogicType.Open" |
+		"LogicType.OperationalTemperatureEfficiency" |
+		"LogicType.OrbitPeriod" |
+		"LogicType.Orientation" |
+		"LogicType.Output" |
+		"LogicType.PassedMoles" |
+		"LogicType.Plant" |
+		"LogicType.PositionX" |
+		"LogicType.PositionY" |
+		"LogicType.PositionZ" |
+		"LogicType.Power" |
+		"LogicType.PowerActual" |
+		"LogicType.PowerGeneration" |
+		"LogicType.PowerPotential" |
+		"LogicType.PowerRequired" |
+		"LogicType.PrefabHash" |
+		"LogicType.Pressure" |
+		"LogicType.PressureEfficiency" |
+		"LogicType.PressureExternal" |
+		"LogicType.PressureInput" |
+		"LogicType.PressureInput2" |
+		"LogicType.PressureInternal" |
+		"LogicType.PressureOutput" |
+		"LogicType.PressureOutput2" |
+		"LogicType.PressureSetting" |
+		"LogicType.Progress" |
+		"LogicType.ProportionalGain" |
+		"LogicType.Quantity" |
+		"LogicType.Ratio" |
+		"LogicType.RatioCarbonDioxide" |
+		"LogicType.RatioCarbonDioxideInput" |
+		"LogicType.RatioCarbonDioxideInput2" |
+		"LogicType.RatioCarbonDioxideOutput" |
+		"LogicType.RatioCarbonDioxideOutput2" |
+		"LogicType.RatioHydrogen" |
+		"LogicType.RatioLiquidCarbonDioxide" |
+		"LogicType.RatioLiquidCarbonDioxideInput" |
+		"LogicType.RatioLiquidCarbonDioxideInput2" |
+		"LogicType.RatioLiquidCarbonDioxideOutput" |
+		"LogicType.RatioLiquidCarbonDioxideOutput2" |
+		"LogicType.RatioLiquidHydrogen" |
+		"LogicType.RatioLiquidNitrogen" |
+		"LogicType.RatioLiquidNitrogenInput" |
+		"LogicType.RatioLiquidNitrogenInput2" |
+		"LogicType.RatioLiquidNitrogenOutput" |
+		"LogicType.RatioLiquidNitrogenOutput2" |
+		"LogicType.RatioLiquidNitrousOxide" |
+		"LogicType.RatioLiquidNitrousOxideInput" |
+		"LogicType.RatioLiquidNitrousOxideInput2" |
+		"LogicType.RatioLiquidNitrousOxideOutput" |
+		"LogicType.RatioLiquidNitrousOxideOutput2" |
+		"LogicType.RatioLiquidOxygen" |
+		"LogicType.RatioLiquidOxygenInput" |
+		"LogicType.RatioLiquidOxygenInput2" |
+		"LogicType.RatioLiquidOxygenOutput" |
+		"LogicType.RatioLiquidOxygenOutput2" |
+		"LogicType.RatioLiquidPollutant" |
+		"LogicType.RatioLiquidPollutantInput" |
+		"LogicType.RatioLiquidPollutantInput2" |
+		"LogicType.RatioLiquidPollutantOutput" |
+		"LogicType.RatioLiquidPollutantOutput2" |
+		"LogicType.RatioLiquidVolatiles" |
+		"LogicType.RatioLiquidVolatilesInput" |
+		"LogicType.RatioLiquidVolatilesInput2" |
+		"LogicType.RatioLiquidVolatilesOutput" |
+		"LogicType.RatioLiquidVolatilesOutput2" |
+		"LogicType.RatioNitrogen" |
+		"LogicType.RatioNitrogenInput" |
+		"LogicType.RatioNitrogenInput2" |
+		"LogicType.RatioNitrogenOutput" |
+		"LogicType.RatioNitrogenOutput2" |
+		"LogicType.RatioNitrousOxide" |
+		"LogicType.RatioNitrousOxideInput" |
+		"LogicType.RatioNitrousOxideInput2" |
+		"LogicType.RatioNitrousOxideOutput" |
+		"LogicType.RatioNitrousOxideOutput2" |
+		"LogicType.RatioOxygen" |
+		"LogicType.RatioOxygenInput" |
+		"LogicType.RatioOxygenInput2" |
+		"LogicType.RatioOxygenOutput" |
+		"LogicType.RatioOxygenOutput2" |
+		"LogicType.RatioPollutant" |
+		"LogicType.RatioPollutantInput" |
+		"LogicType.RatioPollutantInput2" |
+		"LogicType.RatioPollutantOutput" |
+		"LogicType.RatioPollutantOutput2" |
+		"LogicType.RatioPollutedWater" |
+		"LogicType.RatioSteam" |
+		"LogicType.RatioSteamInput" |
+		"LogicType.RatioSteamInput2" |
+		"LogicType.RatioSteamOutput" |
+		"LogicType.RatioSteamOutput2" |
+		"LogicType.RatioVolatiles" |
+		"LogicType.RatioVolatilesInput" |
+		"LogicType.RatioVolatilesInput2" |
+		"LogicType.RatioVolatilesOutput" |
+		"LogicType.RatioVolatilesOutput2" |
+		"LogicType.RatioWater" |
+		"LogicType.RatioWaterInput" |
+		"LogicType.RatioWaterInput2" |
+		"LogicType.RatioWaterOutput" |
+		"LogicType.RatioWaterOutput2" |
+		"LogicType.ReEntryAltitude" |
+		"LogicType.Reagents" |
+		"LogicType.RecipeHash" |
+		"LogicType.ReferenceId" |
+		"LogicType.RequestHash" |
+		"LogicType.RequiredPower" |
+		"LogicType.Reset" |
+		"LogicType.ReturnFuelCost" |
+		"LogicType.Richness" |
+		"LogicType.Rpm" |
+		"LogicType.SemiMajorAxis" |
+		"LogicType.Setpoint" |
+		"LogicType.Setting" |
+		"LogicType.SettingInput" |
+		"LogicType.SettingOutput" |
+		"LogicType.SignalID" |
+		"LogicType.SignalStrength" |
+		"LogicType.Sites" |
+		"LogicType.Size" |
+		"LogicType.SizeX" |
+		"LogicType.SizeY" |
+		"LogicType.SizeZ" |
+		"LogicType.SolarAngle" |
+		"LogicType.SolarIrradiance" |
+		"LogicType.SoundAlert" |
+		"LogicType.StackSize" |
+		"LogicType.Stress" |
+		"LogicType.Survey" |
+		"LogicType.TargetPadIndex" |
+		"LogicType.TargetPrefabHash" |
+		"LogicType.TargetSlotIndex" |
+		"LogicType.TargetX" |
+		"LogicType.TargetY" |
+		"LogicType.TargetZ" |
+		"LogicType.Temperature" |
+		"LogicType.TemperatureDifferentialEfficiency" |
+		"LogicType.TemperatureExternal" |
+		"LogicType.TemperatureInput" |
+		"LogicType.TemperatureInput2" |
+		"LogicType.TemperatureOutput" |
+		"LogicType.TemperatureOutput2" |
+		"LogicType.TemperatureSetting" |
+		"LogicType.Throttle" |
+		"LogicType.Thrust" |
+		"LogicType.ThrustToWeight" |
+		"LogicType.Time" |
+		"LogicType.TimeToDestination" |
+		"LogicType.TotalMoles" |
+		"LogicType.TotalMolesInput" |
+		"LogicType.TotalMolesInput2" |
+		"LogicType.TotalMolesOutput" |
+		"LogicType.TotalMolesOutput2" |
+		"LogicType.TotalQuantity" |
+		"LogicType.TrueAnomaly" |
+		"LogicType.VelocityMagnitude" |
+		"LogicType.VelocityRelativeX" |
+		"LogicType.VelocityRelativeY" |
+		"LogicType.VelocityRelativeZ" |
+		"LogicType.VelocityX" |
+		"LogicType.VelocityY" |
+		"LogicType.VelocityZ" |
+		"LogicType.Vertical" |
+		"LogicType.VerticalRatio" |
+		"LogicType.Volume" |
+		"LogicType.VolumeOfLiquid" |
+		"LogicType.WattsReachingContact" |
+		"LogicType.Weight" |
+		"LogicType.WorkingGasEfficiency"
 		// endLogic
 	}
 
@@ -274,7 +286,6 @@ Hash { Function "(" String ")"}
 		"AirControl.None" |
 		"AirControl.Offline" |
 		"AirControl.Pressure" |
-		"Average" |
 		"Color.Black" |
 		"Color.Blue" |
 		"Color.Brown" |
@@ -287,10 +298,31 @@ Hash { Function "(" String ")"}
 		"Color.Red" |
 		"Color.White" |
 		"Color.Yellow" |
-		"Contents" |
+		"ConditionOperation.Equals" |
+		"ConditionOperation.Greater" |
+		"ConditionOperation.Less" |
+		"ConditionOperation.NotEquals" |
+		"ContactTier.Close" |
+		"ContactTier.Far" |
+		"ContactTier.Medium" |
 		"DaylightSensorMode.Default" |
 		"DaylightSensorMode.Horizontal" |
 		"DaylightSensorMode.Vertical" |
+		"DisplayMode.Celsius" |
+		"DisplayMode.Credits" |
+		"DisplayMode.Days" |
+		"DisplayMode.Default" |
+		"DisplayMode.Fahrenheit" |
+		"DisplayMode.Kelvin" |
+		"DisplayMode.Litres" |
+		"DisplayMode.Meters" |
+		"DisplayMode.Minutes" |
+		"DisplayMode.Mol" |
+		"DisplayMode.Pa" |
+		"DisplayMode.Percent" |
+		"DisplayMode.Power" |
+		"DisplayMode.Seconds" |
+		"DisplayMode.String" |
 		"ElevatorMode.Downward" |
 		"ElevatorMode.Stationary" |
 		"ElevatorMode.Upward" |
@@ -298,12 +330,10 @@ Hash { Function "(" String ")"}
 		"EntityState.Dead" |
 		"EntityState.Decay" |
 		"EntityState.Unconscious" |
-		"Equals" |
+		"GasType.Air" |
 		"GasType.CarbonDioxide" |
-		"GasType.Chart" |
-		"GasType.Discover" |
+		"GasType.Fuel" |
 		"GasType.Hydrogen" |
-		"GasType.Invalid" |
 		"GasType.LiquidCarbonDioxide" |
 		"GasType.LiquidHydrogen" |
 		"GasType.LiquidNitrogen" |
@@ -311,35 +341,356 @@ Hash { Function "(" String ")"}
 		"GasType.LiquidOxygen" |
 		"GasType.LiquidPollutant" |
 		"GasType.LiquidVolatiles" |
-		"GasType.Mine" |
 		"GasType.Nitrogen" |
 		"GasType.NitrousOxide" |
-		"GasType.None" |
 		"GasType.Oxygen" |
 		"GasType.Pollutant" |
 		"GasType.PollutedWater" |
 		"GasType.Steam" |
-		"GasType.Survey" |
 		"GasType.Undefined" |
 		"GasType.Volatiles" |
 		"GasType.Water" |
-		"Greater" |
-		"Less" |
-		"Maximum" |
-		"Minimum" |
-		"NotEquals" |
+		"HashType.GasLiquid" |
+		"HashType.Prefab" |
+		"LogicBatchMethod.Average" |
+		"LogicBatchMethod.Maximum" |
+		"LogicBatchMethod.Minimum" |
+		"LogicBatchMethod.Sum" |
+		"LogicReagentMode.Contents" |
+		"LogicReagentMode.Recipe" |
+		"LogicReagentMode.Required" |
+		"LogicReagentMode.TotalContents" |
+		"LogicSlotType.Charge" |
+		"LogicSlotType.ChargeRatio" |
+		"LogicSlotType.Class" |
+		"LogicSlotType.Damage" |
+		"LogicSlotType.Efficiency" |
+		"LogicSlotType.FilterType" |
+		"LogicSlotType.Growth" |
+		"LogicSlotType.HarvestedHash" |
+		"LogicSlotType.Health" |
+		"LogicSlotType.LineNumber" |
+		"LogicSlotType.Lock" |
+		"LogicSlotType.Mature" |
+		"LogicSlotType.MaturityRatio" |
+		"LogicSlotType.MaxQuantity" |
+		"LogicSlotType.Mode" |
+		"LogicSlotType.None" |
+		"LogicSlotType.OccupantHash" |
+		"LogicSlotType.Occupied" |
+		"LogicSlotType.On" |
+		"LogicSlotType.Open" |
+		"LogicSlotType.PrefabHash" |
+		"LogicSlotType.Pressure" |
+		"LogicSlotType.PressureAir" |
+		"LogicSlotType.PressureWaste" |
+		"LogicSlotType.Quantity" |
+		"LogicSlotType.ReferenceId" |
+		"LogicSlotType.Seeding" |
+		"LogicSlotType.SeedingRatio" |
+		"LogicSlotType.SortingClass" |
+		"LogicSlotType.Temperature" |
+		"LogicSlotType.Volume" |
+		"LogicType.Acceleration" |
+		"LogicType.Activate" |
+		"LogicType.AirRelease" |
+		"LogicType.AlignmentError" |
+		"LogicType.Altitude" |
+		"LogicType.Apex" |
+		"LogicType.AutoLand" |
+		"LogicType.AutoShutOff" |
+		"LogicType.BestContactFilter" |
+		"LogicType.Bpm" |
+		"LogicType.BurnTimeRemaining" |
+		"LogicType.CelestialHash" |
+		"LogicType.CelestialParentHash" |
+		"LogicType.Channel0" |
+		"LogicType.Channel1" |
+		"LogicType.Channel2" |
+		"LogicType.Channel3" |
+		"LogicType.Channel4" |
+		"LogicType.Channel5" |
+		"LogicType.Channel6" |
+		"LogicType.Channel7" |
+		"LogicType.Charge" |
+		"LogicType.Chart" |
+		"LogicType.ChartedNavPoints" |
+		"LogicType.ClearMemory" |
+		"LogicType.CollectableGoods" |
+		"LogicType.Color" |
+		"LogicType.Combustion" |
+		"LogicType.CombustionInput" |
+		"LogicType.CombustionInput2" |
+		"LogicType.CombustionLimiter" |
+		"LogicType.CombustionOutput" |
+		"LogicType.CombustionOutput2" |
+		"LogicType.CompletionRatio" |
+		"LogicType.ContactTypeId" |
+		"LogicType.CurrentCode" |
+		"LogicType.CurrentResearchPodType" |
+		"LogicType.Density" |
+		"LogicType.DerivativeGain" |
+		"LogicType.DestinationCode" |
+		"LogicType.Discover" |
+		"LogicType.DistanceAu" |
+		"LogicType.DistanceKm" |
+		"LogicType.DrillCondition" |
+		"LogicType.DryMass" |
+		"LogicType.Eccentricity" |
+		"LogicType.ElevatorLevel" |
+		"LogicType.ElevatorSpeed" |
+		"LogicType.EntityState" |
+		"LogicType.EnvironmentEfficiency" |
+		"LogicType.Error" |
+		"LogicType.ExhaustVelocity" |
+		"LogicType.ExportCount" |
+		"LogicType.ExportQuantity" |
+		"LogicType.ExportSlotHash" |
+		"LogicType.ExportSlotOccupant" |
+		"LogicType.Extended" |
+		"LogicType.Filtration" |
+		"LogicType.FlightControlRule" |
+		"LogicType.Flush" |
+		"LogicType.ForceWrite" |
+		"LogicType.ForwardX" |
+		"LogicType.ForwardY" |
+		"LogicType.ForwardZ" |
+		"LogicType.Fuel" |
+		"LogicType.Harvest" |
+		"LogicType.Horizontal" |
+		"LogicType.HorizontalRatio" |
+		"LogicType.Idle" |
+		"LogicType.ImportCount" |
+		"LogicType.ImportQuantity" |
+		"LogicType.ImportSlotHash" |
+		"LogicType.ImportSlotOccupant" |
+		"LogicType.Inclination" |
+		"LogicType.Index" |
+		"LogicType.IntegralGain" |
+		"LogicType.InterrogationProgress" |
+		"LogicType.LineNumber" |
+		"LogicType.Lock" |
+		"LogicType.ManualResearchRequiredPod" |
+		"LogicType.Mass" |
+		"LogicType.Maximum" |
+		"LogicType.MineablesInQueue" |
+		"LogicType.MineablesInVicinity" |
+		"LogicType.MinedQuantity" |
+		"LogicType.Minimum" |
+		"LogicType.MinimumWattsToContact" |
+		"LogicType.Mode" |
+		"LogicType.NameHash" |
+		"LogicType.NavPoints" |
+		"LogicType.NetworkFault" |
+		"LogicType.NextWeatherEventTime" |
+		"LogicType.None" |
+		"LogicType.On" |
+		"LogicType.Open" |
+		"LogicType.OperationalTemperatureEfficiency" |
+		"LogicType.OrbitPeriod" |
+		"LogicType.Orientation" |
+		"LogicType.Output" |
+		"LogicType.PassedMoles" |
+		"LogicType.Plant" |
+		"LogicType.PlantEfficiency1" |
+		"LogicType.PlantEfficiency2" |
+		"LogicType.PlantEfficiency3" |
+		"LogicType.PlantEfficiency4" |
+		"LogicType.PlantGrowth1" |
+		"LogicType.PlantGrowth2" |
+		"LogicType.PlantGrowth3" |
+		"LogicType.PlantGrowth4" |
+		"LogicType.PlantHash1" |
+		"LogicType.PlantHash2" |
+		"LogicType.PlantHash3" |
+		"LogicType.PlantHash4" |
+		"LogicType.PlantHealth1" |
+		"LogicType.PlantHealth2" |
+		"LogicType.PlantHealth3" |
+		"LogicType.PlantHealth4" |
+		"LogicType.PositionX" |
+		"LogicType.PositionY" |
+		"LogicType.PositionZ" |
+		"LogicType.Power" |
+		"LogicType.PowerActual" |
+		"LogicType.PowerGeneration" |
+		"LogicType.PowerPotential" |
+		"LogicType.PowerRequired" |
+		"LogicType.PrefabHash" |
+		"LogicType.Pressure" |
+		"LogicType.PressureEfficiency" |
+		"LogicType.PressureExternal" |
+		"LogicType.PressureInput" |
+		"LogicType.PressureInput2" |
+		"LogicType.PressureInternal" |
+		"LogicType.PressureOutput" |
+		"LogicType.PressureOutput2" |
+		"LogicType.PressureSetting" |
+		"LogicType.Progress" |
+		"LogicType.ProportionalGain" |
+		"LogicType.Quantity" |
+		"LogicType.Ratio" |
+		"LogicType.RatioCarbonDioxide" |
+		"LogicType.RatioCarbonDioxideInput" |
+		"LogicType.RatioCarbonDioxideInput2" |
+		"LogicType.RatioCarbonDioxideOutput" |
+		"LogicType.RatioCarbonDioxideOutput2" |
+		"LogicType.RatioHydrogen" |
+		"LogicType.RatioLiquidCarbonDioxide" |
+		"LogicType.RatioLiquidCarbonDioxideInput" |
+		"LogicType.RatioLiquidCarbonDioxideInput2" |
+		"LogicType.RatioLiquidCarbonDioxideOutput" |
+		"LogicType.RatioLiquidCarbonDioxideOutput2" |
+		"LogicType.RatioLiquidHydrogen" |
+		"LogicType.RatioLiquidNitrogen" |
+		"LogicType.RatioLiquidNitrogenInput" |
+		"LogicType.RatioLiquidNitrogenInput2" |
+		"LogicType.RatioLiquidNitrogenOutput" |
+		"LogicType.RatioLiquidNitrogenOutput2" |
+		"LogicType.RatioLiquidNitrousOxide" |
+		"LogicType.RatioLiquidNitrousOxideInput" |
+		"LogicType.RatioLiquidNitrousOxideInput2" |
+		"LogicType.RatioLiquidNitrousOxideOutput" |
+		"LogicType.RatioLiquidNitrousOxideOutput2" |
+		"LogicType.RatioLiquidOxygen" |
+		"LogicType.RatioLiquidOxygenInput" |
+		"LogicType.RatioLiquidOxygenInput2" |
+		"LogicType.RatioLiquidOxygenOutput" |
+		"LogicType.RatioLiquidOxygenOutput2" |
+		"LogicType.RatioLiquidPollutant" |
+		"LogicType.RatioLiquidPollutantInput" |
+		"LogicType.RatioLiquidPollutantInput2" |
+		"LogicType.RatioLiquidPollutantOutput" |
+		"LogicType.RatioLiquidPollutantOutput2" |
+		"LogicType.RatioLiquidVolatiles" |
+		"LogicType.RatioLiquidVolatilesInput" |
+		"LogicType.RatioLiquidVolatilesInput2" |
+		"LogicType.RatioLiquidVolatilesOutput" |
+		"LogicType.RatioLiquidVolatilesOutput2" |
+		"LogicType.RatioNitrogen" |
+		"LogicType.RatioNitrogenInput" |
+		"LogicType.RatioNitrogenInput2" |
+		"LogicType.RatioNitrogenOutput" |
+		"LogicType.RatioNitrogenOutput2" |
+		"LogicType.RatioNitrousOxide" |
+		"LogicType.RatioNitrousOxideInput" |
+		"LogicType.RatioNitrousOxideInput2" |
+		"LogicType.RatioNitrousOxideOutput" |
+		"LogicType.RatioNitrousOxideOutput2" |
+		"LogicType.RatioOxygen" |
+		"LogicType.RatioOxygenInput" |
+		"LogicType.RatioOxygenInput2" |
+		"LogicType.RatioOxygenOutput" |
+		"LogicType.RatioOxygenOutput2" |
+		"LogicType.RatioPollutant" |
+		"LogicType.RatioPollutantInput" |
+		"LogicType.RatioPollutantInput2" |
+		"LogicType.RatioPollutantOutput" |
+		"LogicType.RatioPollutantOutput2" |
+		"LogicType.RatioPollutedWater" |
+		"LogicType.RatioSteam" |
+		"LogicType.RatioSteamInput" |
+		"LogicType.RatioSteamInput2" |
+		"LogicType.RatioSteamOutput" |
+		"LogicType.RatioSteamOutput2" |
+		"LogicType.RatioVolatiles" |
+		"LogicType.RatioVolatilesInput" |
+		"LogicType.RatioVolatilesInput2" |
+		"LogicType.RatioVolatilesOutput" |
+		"LogicType.RatioVolatilesOutput2" |
+		"LogicType.RatioWater" |
+		"LogicType.RatioWaterInput" |
+		"LogicType.RatioWaterInput2" |
+		"LogicType.RatioWaterOutput" |
+		"LogicType.RatioWaterOutput2" |
+		"LogicType.ReEntryAltitude" |
+		"LogicType.Reagents" |
+		"LogicType.RecipeHash" |
+		"LogicType.ReferenceId" |
+		"LogicType.RequestHash" |
+		"LogicType.RequiredPower" |
+		"LogicType.Reset" |
+		"LogicType.ReturnFuelCost" |
+		"LogicType.Richness" |
+		"LogicType.Rpm" |
+		"LogicType.SemiMajorAxis" |
+		"LogicType.Setpoint" |
+		"LogicType.Setting" |
+		"LogicType.SettingInput" |
+		"LogicType.SettingOutput" |
+		"LogicType.SignalID" |
+		"LogicType.SignalStrength" |
+		"LogicType.Sites" |
+		"LogicType.Size" |
+		"LogicType.SizeX" |
+		"LogicType.SizeY" |
+		"LogicType.SizeZ" |
+		"LogicType.SolarAngle" |
+		"LogicType.SolarIrradiance" |
+		"LogicType.SoundAlert" |
+		"LogicType.StackSize" |
+		"LogicType.Stress" |
+		"LogicType.Survey" |
+		"LogicType.TargetPadIndex" |
+		"LogicType.TargetPrefabHash" |
+		"LogicType.TargetSlotIndex" |
+		"LogicType.TargetX" |
+		"LogicType.TargetY" |
+		"LogicType.TargetZ" |
+		"LogicType.Temperature" |
+		"LogicType.TemperatureDifferentialEfficiency" |
+		"LogicType.TemperatureExternal" |
+		"LogicType.TemperatureInput" |
+		"LogicType.TemperatureInput2" |
+		"LogicType.TemperatureOutput" |
+		"LogicType.TemperatureOutput2" |
+		"LogicType.TemperatureSetting" |
+		"LogicType.Throttle" |
+		"LogicType.Thrust" |
+		"LogicType.ThrustToWeight" |
+		"LogicType.Time" |
+		"LogicType.TimeToDestination" |
+		"LogicType.TotalMoles" |
+		"LogicType.TotalMolesInput" |
+		"LogicType.TotalMolesInput2" |
+		"LogicType.TotalMolesOutput" |
+		"LogicType.TotalMolesOutput2" |
+		"LogicType.TotalQuantity" |
+		"LogicType.TrueAnomaly" |
+		"LogicType.VelocityMagnitude" |
+		"LogicType.VelocityRelativeX" |
+		"LogicType.VelocityRelativeY" |
+		"LogicType.VelocityRelativeZ" |
+		"LogicType.VelocityX" |
+		"LogicType.VelocityY" |
+		"LogicType.VelocityZ" |
+		"LogicType.Vertical" |
+		"LogicType.VerticalRatio" |
+		"LogicType.Volume" |
+		"LogicType.VolumeOfLiquid" |
+		"LogicType.WattsReachingContact" |
+		"LogicType.Weight" |
+		"LogicType.WorkingGasEfficiency" |
 		"PowerMode.Charged" |
 		"PowerMode.Charging" |
 		"PowerMode.Discharged" |
 		"PowerMode.Discharging" |
 		"PowerMode.Idle" |
+		"PrinterInstruction.DeviceSetLock" |
+		"PrinterInstruction.EjectAllReagents" |
+		"PrinterInstruction.EjectReagent" |
+		"PrinterInstruction.ExecuteRecipe" |
+		"PrinterInstruction.JumpIfNextInvalid" |
+		"PrinterInstruction.JumpToAddress" |
+		"PrinterInstruction.MissingRecipeReagent" |
+		"PrinterInstruction.None" |
+		"PrinterInstruction.StackPointer" |
+		"PrinterInstruction.WaitUntilNextValid" |
 		"ReEntryProfile.High" |
+		"ReEntryProfile.Low" |
 		"ReEntryProfile.Max" |
 		"ReEntryProfile.Medium" |
 		"ReEntryProfile.None" |
-		"ReEntryProfile.Optimal" |
-		"Recipe" |
-		"Required" |
 		"RobotMode.Follow" |
 		"RobotMode.MoveToTarget" |
 		"RobotMode.None" |
@@ -347,6 +698,24 @@ Hash { Function "(" String ")"}
 		"RobotMode.Roam" |
 		"RobotMode.StorageFull" |
 		"RobotMode.Unload" |
+		"RocketMode.Chart" |
+		"RocketMode.Deploy" |
+		"RocketMode.Discover" |
+		"RocketMode.Invalid" |
+		"RocketMode.Mine" |
+		"RocketMode.None" |
+		"RocketMode.Survey" |
+		"SettingDisplayMode.Number" |
+		"SettingDisplayMode.String" |
+		"ShuttleType.Large" |
+		"ShuttleType.LargeGas" |
+		"ShuttleType.LargePlane" |
+		"ShuttleType.Medium" |
+		"ShuttleType.MediumGas" |
+		"ShuttleType.MediumPlane" |
+		"ShuttleType.None" |
+		"ShuttleType.Small" |
+		"ShuttleType.SmallGas" |
 		"SlotClass.AccessCard" |
 		"SlotClass.Appliance" |
 		"SlotClass.Back" |
@@ -357,6 +726,7 @@ Hash { Function "(" String ")"}
 		"SlotClass.Cartridge" |
 		"SlotClass.Circuit" |
 		"SlotClass.Circuitboard" |
+		"SlotClass.Crate" |
 		"SlotClass.CreditCard" |
 		"SlotClass.DataDisk" |
 		"SlotClass.DirtCanister" |
@@ -377,7 +747,9 @@ Hash { Function "(" String ")"}
 		"SlotClass.Ore" |
 		"SlotClass.Organ" |
 		"SlotClass.Plant" |
+		"SlotClass.Portables" |
 		"SlotClass.ProgrammableChip" |
+		"SlotClass.RocketPayload" |
 		"SlotClass.ScanningHead" |
 		"SlotClass.SensorProcessingUnit" |
 		"SlotClass.SoundCartridge" |
@@ -451,8 +823,25 @@ Hash { Function "(" String ")"}
 		"Sound.Two" |
 		"Sound.Warning" |
 		"Sound.Welcome" |
-		"Sum" |
-		"TotalContents" |
+		"TraderInstruction.FilterGasContains" |
+		"TraderInstruction.FilterGasNotContains" |
+		"TraderInstruction.FilterPrefabHashEquals" |
+		"TraderInstruction.FilterPrefabHashNotEquals" |
+		"TraderInstruction.FilterQuantityCompare" |
+		"TraderInstruction.FilterSortingClassCompare" |
+		"TraderInstruction.None" |
+		"TraderInstruction.StrongestContactIdHash" |
+		"TraderInstruction.StrongestContactMetaData" |
+		"TraderInstruction.StrongestContactSignalData" |
+		"TraderInstruction.TraderBuyGasData" |
+		"TraderInstruction.TraderBuyThingChildData" |
+		"TraderInstruction.TraderBuyThingData" |
+		"TraderInstruction.TraderSellGasData" |
+		"TraderInstruction.TraderSellThingChildData" |
+		"TraderInstruction.TraderSellThingData" |
+		"TraderInstruction.WriteTraderBuyData" |
+		"TraderInstruction.WriteTraderData" |
+		"TraderInstruction.WriteTraderSellData" |
 		"TransmitterMode.Active" |
 		"TransmitterMode.Passive" |
 		"Vent.Inward" |
@@ -463,7 +852,9 @@ Hash { Function "(" String ")"}
 		"ninf" |
 		"pi" |
 		"pinf" |
-		"rad2deg"
+		"rad2deg" |
+		"rgas" |
+		"tau"
 		// endConst
 	}
 
@@ -483,6 +874,8 @@ Hash { Function "(" String ")"}
 		"bapzal" |
 		"bdns" |
 		"bdnsal" |
+		"bdnvl" |
+		"bdnvs" |
 		"bdse" |
 		"bdseal" |
 		"beq" |
@@ -540,10 +933,12 @@ Hash { Function "(" String ")"}
 		"define" |
 		"div" |
 		"exp" |
+		"ext" |
 		"floor" |
 		"get" |
 		"getd" |
 		"hcf" |
+		"ins" |
 		"j" |
 		"jal" |
 		"jr" |
@@ -554,6 +949,7 @@ Hash { Function "(" String ")"}
 		"lbns" |
 		"lbs" |
 		"ld" |
+		"lerp" |
 		"log" |
 		"lr" |
 		"ls" |
@@ -568,10 +964,12 @@ Hash { Function "(" String ")"}
 		"peek" |
 		"poke" |
 		"pop" |
+		"pow" |
 		"push" |
 		"put" |
 		"putd" |
 		"rand" |
+		"rmap" |
 		"round" |
 		"s" |
 		"sap" |
