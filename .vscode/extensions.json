@@ -1,5 +1,3 @@
 {
-	"recommendations": [
-		"tamuratak.vscode-lezer"
-	]
+	"recommendations": ["tamuratak.vscode-lezer", "oven.bun-vscode", "biomejs.biome"]
 }

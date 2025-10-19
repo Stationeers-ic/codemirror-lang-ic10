@@ -68,5 +68,13 @@
 		"snanz",
 		"snaz",
 		"snez"
-	]
+	],
+	"biome.enabled": true,
+	"biome.lsp.trace.server": "messages",
+	"biome.requireConfiguration": true,
+	"biome.lsp.bin": {
+		"linux-x64": "./tools/bin/linux-x64/biome",
+		"darwin-arm64": "./tools/bin/darwin-arm64/biome",
+		"win32-x64": "./tools/bin/win/biome.exe"
+	}
 }

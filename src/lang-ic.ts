@@ -1,8 +1,8 @@
-import type {snippetsArguments, snippetsOptions} from "./types"
-import { styleTags, tags as t } from "@lezer/highlight"
-import { parser } from "./syntax.grammar"
-import { LRLanguage, LanguageSupport } from "@codemirror/language"
-import { ic10Snippets as snippet } from "./snippets"
+import { LanguageSupport, LRLanguage } from "@codemirror/language";
+import { styleTags, tags as t } from "@lezer/highlight";
+import { ic10Snippets as snippet } from "./snippets";
+import { parser } from "./syntax.grammar";
+import type { snippetsArguments, snippetsOptions } from "./types";
 
 export const icLanguage = LRLanguage.define({
 	name: "ic10",
@@ -28,10 +28,10 @@ export const icLanguage = LRLanguage.define({
 	languageData: {
 		commentTokens: { line: "#" },
 	},
-})
+});
 
 export function ic10() {
-	return new LanguageSupport(icLanguage)
+	return new LanguageSupport(icLanguage);
 }
 
 // export type snippetsArguments = {
@@ -41,7 +41,6 @@ export function ic10() {
 // 	logic: boolean
 // }
 
-
 export const ic10Snippets = (snippetsArguments?: snippetsOptions) => {
 	const args: snippetsArguments = {
 		snippets: true,
@@ -49,8 +48,8 @@ export const ic10Snippets = (snippetsArguments?: snippetsOptions) => {
 		registers: true,
 		logic: true,
 		...snippetsArguments,
-	}
+	};
 	return icLanguage.data.of({
 		autocomplete: snippet(args),
-	})
-}
+	});
+};

@@ -1,13 +1,12 @@
-import type { EditorState } from "@codemirror/state"
-import { lineNumbers } from "@codemirror/view"
-
+import type { EditorState } from "@codemirror/state";
+import { lineNumbers } from "@codemirror/view";
 
 export const customLineNumbers = (fn: (n: number, state: EditorState) => string) =>
 	lineNumbers({
 		formatNumber: fn,
-	})
+	});
 
-export const zeroLineNumbers = customLineNumbers((n) => (n - 1).toString())
+export const zeroLineNumbers = customLineNumbers((n) => (n - 1).toString());
 // const breakpointEffect = StateEffect.define<{ pos: number; on: boolean }>({
 // 	map: (val, mapping) => ({ pos: mapping.mapPos(val.pos), on: val.on }),
 // })

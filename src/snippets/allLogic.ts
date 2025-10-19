@@ -1,6 +1,6 @@
 export const allLogic: {
-	name: string
-	description: string
+	name: string;
+	description: string;
 }[] = [
 	{
 		name: "Mode",
@@ -218,8 +218,7 @@ export const allLogic: {
 	},
 	{
 		name: "PressureSetting",
-		description:
-			"The current setting for the internal pressure of the object (e.g. the Hardsuit Air release), in KPa",
+		description: "The current setting for the internal pressure of the object (e.g. the Hardsuit Air release), in KPa",
 	},
 	{
 		name: "TemperatureSetting",
@@ -342,8 +341,7 @@ export const allLogic: {
 	},
 	{
 		name: "ClearMemory",
-		description:
-			"When set to 1, clears the counter memory (e.g. ExportCount). Will set itself back to 0 when actioned",
+		description: "When set to 1, clears the counter memory (e.g. ExportCount). Will set itself back to 0 when actioned",
 	},
 	{
 		name: "ExportCount",
@@ -423,8 +421,7 @@ export const allLogic: {
 	},
 	{
 		name: "TemperatureDifferentialEfficiency",
-		description:
-			"How the difference between the input pipe and waste pipe temperatures effect the machines efficiency",
+		description: "How the difference between the input pipe and waste pipe temperatures effect the machines efficiency",
 	},
 	{
 		name: "PressureEfficiency",
@@ -689,8 +686,7 @@ export const allLogic: {
 	},
 	{
 		name: "Acceleration",
-		description:
-			"Change in velocity. Rockets that are deccelerating when landing will show this as negative value.",
+		description: "Change in velocity. Rockets that are deccelerating when landing will show this as negative value.",
 	},
 	{
 		name: "AutoShutOff",
@@ -712,8 +708,7 @@ export const allLogic: {
 	},
 	{
 		name: "Weight",
-		description:
-			"Weight of Rocket in Newtons (Including fuel and cargo). Weight is effected by local body gravity.",
+		description: "Weight of Rocket in Newtons (Including fuel and cargo). Weight is effected by local body gravity.",
 	},
 	{
 		name: "ThrustToWeight",
@@ -804,8 +799,14 @@ export const allLogic: {
 	{ name: "Sound.PowerLow", description: "Sound.PowerLow = 23" },
 	{ name: "Sound.SystemFailure", description: "Sound.SystemFailure = 24" },
 	{ name: "Sound.Welcome", description: "Sound.Welcome = 25" },
-	{ name: "Sound.MalfunctionDetected", description: "Sound.MalfunctionDetected = 26" },
-	{ name: "Sound.HaltWhoGoesThere", description: "Sound.HaltWhoGoesThere = 27" },
+	{
+		name: "Sound.MalfunctionDetected",
+		description: "Sound.MalfunctionDetected = 26",
+	},
+	{
+		name: "Sound.HaltWhoGoesThere",
+		description: "Sound.HaltWhoGoesThere = 27",
+	},
 	{ name: "Sound.FireFireFire", description: "Sound.FireFireFire = 28" },
 	{ name: "Sound.One", description: "Sound.One = 29" },
 	{ name: "Sound.Two", description: "Sound.Two = 30" },
@@ -821,12 +822,24 @@ export const allLogic: {
 	{ name: "Sound.PressureLow", description: "Sound.PressureLow = 40" },
 	{ name: "Sound.TemperatureHigh", description: "Sound.TemperatureHigh = 41" },
 	{ name: "Sound.TemperatureLow", description: "Sound.TemperatureLow = 42" },
-	{ name: "Sound.PollutantsDetected", description: "Sound.PollutantsDetected = 43" },
-	{ name: "Sound.HighCarbonDioxide", description: "Sound.HighCarbonDioxide = 44" },
+	{
+		name: "Sound.PollutantsDetected",
+		description: "Sound.PollutantsDetected = 43",
+	},
+	{
+		name: "Sound.HighCarbonDioxide",
+		description: "Sound.HighCarbonDioxide = 44",
+	},
 	{ name: "Sound.Alarm1", description: "Sound.Alarm1 = 45" },
-	{ name: "TransmitterMode.Passive", description: "TransmitterMode.Passive = 0" },
+	{
+		name: "TransmitterMode.Passive",
+		description: "TransmitterMode.Passive = 0",
+	},
 	{ name: "TransmitterMode.Active", description: "TransmitterMode.Active = 1" },
-	{ name: "ElevatorMode.Stationary", description: "ElevatorMode.Stationary = 0" },
+	{
+		name: "ElevatorMode.Stationary",
+		description: "ElevatorMode.Stationary = 0",
+	},
 	{ name: "ElevatorMode.Upward", description: "ElevatorMode.Upward = 1" },
 	{ name: "ElevatorMode.Downward", description: "ElevatorMode.Downward = 2" },
 	{ name: "Color.Blue", description: "Color.Blue = 0" },
@@ -843,15 +856,27 @@ export const allLogic: {
 	{ name: "Color.Purple", description: "Color.Purple = 11" },
 	{ name: "EntityState.Alive", description: "EntityState.Alive = 0" },
 	{ name: "EntityState.Dead", description: "EntityState.Dead = 1" },
-	{ name: "EntityState.Unconscious", description: "EntityState.Unconscious = 2" },
+	{
+		name: "EntityState.Unconscious",
+		description: "EntityState.Unconscious = 2",
+	},
 	{ name: "EntityState.Decay", description: "EntityState.Decay = 3" },
 	{ name: "AirControl.None", description: "AirControl.None = 0" },
 	{ name: "AirControl.Offline", description: "AirControl.Offline = 1" },
 	{ name: "AirControl.Pressure", description: "AirControl.Pressure = 2" },
 	{ name: "AirControl.Draught", description: "AirControl.Draught = 4" },
-	{ name: "DaylightSensorMode.Default", description: "DaylightSensorMode.Default = 0" },
-	{ name: "DaylightSensorMode.Horizontal", description: "DaylightSensorMode.Horizontal = 1" },
-	{ name: "DaylightSensorMode.Vertical", description: "DaylightSensorMode.Vertical = 2" },
+	{
+		name: "DaylightSensorMode.Default",
+		description: "DaylightSensorMode.Default = 0",
+	},
+	{
+		name: "DaylightSensorMode.Horizontal",
+		description: "DaylightSensorMode.Horizontal = 1",
+	},
+	{
+		name: "DaylightSensorMode.Vertical",
+		description: "DaylightSensorMode.Vertical = 2",
+	},
 	{ name: "AirCon.Cold", description: "AirCon.Cold = 0" },
 	{ name: "AirCon.Hot", description: "AirCon.Hot = 1" },
 	{ name: "Vent.Outward", description: "Vent.Outward = 0" },
@@ -874,8 +899,14 @@ export const allLogic: {
 	{ name: "SortingClass.Resources", description: "SortingClass.Resources = 3" },
 	{ name: "SortingClass.Food", description: "SortingClass.Food = 4" },
 	{ name: "SortingClass.Clothing", description: "SortingClass.Clothing = 5" },
-	{ name: "SortingClass.Appliances", description: "SortingClass.Appliances = 6" },
-	{ name: "SortingClass.Atmospherics", description: "SortingClass.Atmospherics = 7" },
+	{
+		name: "SortingClass.Appliances",
+		description: "SortingClass.Appliances = 6",
+	},
+	{
+		name: "SortingClass.Atmospherics",
+		description: "SortingClass.Atmospherics = 7",
+	},
 	{ name: "SortingClass.Storage", description: "SortingClass.Storage = 8" },
 	{ name: "SortingClass.Ores", description: "SortingClass.Ores = 9" },
 	{ name: "SortingClass.Ices", description: "SortingClass.Ices = 10" },
@@ -905,17 +936,38 @@ export const allLogic: {
 	{ name: "SlotClass.Magazine", description: "SlotClass.Magazine = 23" },
 	{ name: "SlotClass.Circuit", description: "SlotClass.Circuit = 24" },
 	{ name: "SlotClass.Bottle", description: "SlotClass.Bottle = 25" },
-	{ name: "SlotClass.ProgrammableChip", description: "SlotClass.ProgrammableChip = 26" },
+	{
+		name: "SlotClass.ProgrammableChip",
+		description: "SlotClass.ProgrammableChip = 26",
+	},
 	{ name: "SlotClass.Glasses", description: "SlotClass.Glasses = 27" },
 	{ name: "SlotClass.CreditCard", description: "SlotClass.CreditCard = 28" },
-	{ name: "SlotClass.DirtCanister", description: "SlotClass.DirtCanister = 29" },
-	{ name: "SlotClass.SensorProcessingUnit", description: "SlotClass.SensorProcessingUnit = 30" },
-	{ name: "SlotClass.LiquidCanister", description: "SlotClass.LiquidCanister = 31" },
-	{ name: "SlotClass.LiquidBottle", description: "SlotClass.LiquidBottle = 32" },
+	{
+		name: "SlotClass.DirtCanister",
+		description: "SlotClass.DirtCanister = 29",
+	},
+	{
+		name: "SlotClass.SensorProcessingUnit",
+		description: "SlotClass.SensorProcessingUnit = 30",
+	},
+	{
+		name: "SlotClass.LiquidCanister",
+		description: "SlotClass.LiquidCanister = 31",
+	},
+	{
+		name: "SlotClass.LiquidBottle",
+		description: "SlotClass.LiquidBottle = 32",
+	},
 	{ name: "SlotClass.Wreckage", description: "SlotClass.Wreckage = 33" },
-	{ name: "SlotClass.SoundCartridge", description: "SlotClass.SoundCartridge = 34" },
+	{
+		name: "SlotClass.SoundCartridge",
+		description: "SlotClass.SoundCartridge = 34",
+	},
 	{ name: "SlotClass.DrillHead", description: "SlotClass.DrillHead = 35" },
-	{ name: "SlotClass.ScanningHead", description: "SlotClass.ScanningHead = 36" },
+	{
+		name: "SlotClass.ScanningHead",
+		description: "SlotClass.ScanningHead = 36",
+	},
 	{ name: "SlotClass.Flare", description: "SlotClass.Flare = 37" },
 	{ name: "SlotClass.Blocked", description: "SlotClass.Blocked = 38" },
 	{ name: "SlotClass.SuitMod", description: "SlotClass.SuitMod = 39" },
@@ -927,16 +979,37 @@ export const allLogic: {
 	{ name: "GasType.Pollutant", description: "GasType.Pollutant = 16" },
 	{ name: "GasType.Water", description: "GasType.Water = 32" },
 	{ name: "GasType.NitrousOxide", description: "GasType.NitrousOxide = 64" },
-	{ name: "GasType.LiquidNitrogen", description: "GasType.LiquidNitrogen = 128" },
+	{
+		name: "GasType.LiquidNitrogen",
+		description: "GasType.LiquidNitrogen = 128",
+	},
 	{ name: "GasType.LiquidOxygen", description: "GasType.LiquidOxygen = 256" },
-	{ name: "GasType.LiquidVolatiles", description: "GasType.LiquidVolatiles = 512" },
+	{
+		name: "GasType.LiquidVolatiles",
+		description: "GasType.LiquidVolatiles = 512",
+	},
 	{ name: "GasType.Steam", description: "GasType.Steam = 1024" },
-	{ name: "GasType.LiquidCarbonDioxide", description: "GasType.LiquidCarbonDioxide = 2048" },
-	{ name: "GasType.LiquidPollutant", description: "GasType.LiquidPollutant = 4096" },
-	{ name: "GasType.LiquidNitrousOxide", description: "GasType.LiquidNitrousOxide = 8192" },
+	{
+		name: "GasType.LiquidCarbonDioxide",
+		description: "GasType.LiquidCarbonDioxide = 2048",
+	},
+	{
+		name: "GasType.LiquidPollutant",
+		description: "GasType.LiquidPollutant = 4096",
+	},
+	{
+		name: "GasType.LiquidNitrousOxide",
+		description: "GasType.LiquidNitrousOxide = 8192",
+	},
 	{ name: "GasType.Hydrogen", description: "GasType.Hydrogen = 16384" },
-	{ name: "GasType.LiquidHydrogen", description: "GasType.LiquidHydrogen = 32768" },
-	{ name: "GasType.PollutedWater", description: "GasType.PollutedWater = 65536" },
+	{
+		name: "GasType.LiquidHydrogen",
+		description: "GasType.LiquidHydrogen = 32768",
+	},
+	{
+		name: "GasType.PollutedWater",
+		description: "GasType.PollutedWater = 65536",
+	},
 	{ name: "GasType.Invalid", description: "GasType.Invalid = 0" },
 	{ name: "GasType.None", description: "GasType.None = 1" },
 	{ name: "GasType.Mine", description: "GasType.Mine = 2" },
@@ -949,7 +1022,10 @@ export const allLogic: {
 	{ name: "ReEntryProfile.High", description: "ReEntryProfile.High = 3" },
 	{ name: "ReEntryProfile.Max", description: "ReEntryProfile.Max = 4" },
 	{ name: "SorterInstruction.None", description: "SorterInstruction.None = 0" },
-	{ name: "SorterInstruction.FilterPrefabHashEquals", description: "SorterInstruction.FilterPrefabHashEquals = 1" },
+	{
+		name: "SorterInstruction.FilterPrefabHashEquals",
+		description: "SorterInstruction.FilterPrefabHashEquals = 1",
+	},
 	{
 		name: "SorterInstruction.FilterPrefabHashNotEquals",
 		description: "SorterInstruction.FilterPrefabHashNotEquals = 2",
@@ -958,11 +1034,17 @@ export const allLogic: {
 		name: "SorterInstruction.FilterSortingClassCompare",
 		description: "SorterInstruction.FilterSortingClassCompare = 3",
 	},
-	{ name: "SorterInstruction.FilterSlotTypeCompare", description: "SorterInstruction.FilterSlotTypeCompare = 4" },
-	{ name: "SorterInstruction.FilterQuantityCompare", description: "SorterInstruction.FilterQuantityCompare = 5" },
+	{
+		name: "SorterInstruction.FilterSlotTypeCompare",
+		description: "SorterInstruction.FilterSlotTypeCompare = 4",
+	},
+	{
+		name: "SorterInstruction.FilterQuantityCompare",
+		description: "SorterInstruction.FilterQuantityCompare = 5",
+	},
 	{
 		name: "SorterInstruction.LimitNextExecutionByCount",
 		description: "SorterInstruction.LimitNextExecutionByCount = 6",
 	},
-]
-export default allLogic
+];
+export default allLogic;
